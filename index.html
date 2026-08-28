@@ -2,8 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <title>Томас ❤️ Яна</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -23,37 +22,49 @@ button,input{
  font:inherit
 }
 
+button{
+ cursor:pointer
+}
+
+.hidden{
+ display:none!important
+}
+
 #app{
- width:100%;
- max-width:900px;
+ max-width:1000px;
  margin:auto;
- padding:20px
+ padding:15px
+}
+
+/* HOME */
+
+.home{
+ max-width:430px;
+ margin:65px auto
+}
+
+.logo{
+ text-align:center;
+ font-size:30px;
+ font-weight:900
+}
+
+.subtitle{
+ text-align:center;
+ color:#858c9b;
+ margin:7px 0 25px
 }
 
 .card{
- max-width:430px;
- margin:60px auto;
- padding:24px;
  background:#11131a;
  border:1px solid #292d38;
- border-radius:20px
-}
-
-h1{
- text-align:center;
- margin:0;
- font-size:28px
-}
-
-.sub{
- text-align:center;
- color:#8d94a3;
- margin:8px 0 25px
+ border-radius:20px;
+ padding:20px
 }
 
 label{
  display:block;
- color:#9ba1ae;
+ color:#9299a7;
  font-size:13px;
  margin-bottom:7px
 }
@@ -61,62 +72,58 @@ label{
 input{
  width:100%;
  padding:14px;
- border-radius:12px;
- border:1px solid #343844;
  background:#080a0f;
- color:white;
+ border:1px solid #343844;
+ border-radius:11px;
+ color:#fff;
  outline:none
 }
 
+input:focus{
+ border-color:#777cff
+}
+
 button{
- width:100%;
- margin-top:10px;
- padding:14px;
  border:0;
- border-radius:12px;
- background:white;
- color:#000;
- font-weight:800
+ border-radius:11px;
+ padding:14px;
+ margin-top:10px;
+ font-weight:800;
+ background:#fff;
+ color:#000
 }
 
-button:disabled{
- opacity:.5
+.secondary{
+ background:#1c2029;
+ color:#fff;
+ border:1px solid #303541
 }
 
-#status{
- margin-top:15px;
- padding:12px;
- border-radius:10px;
- background:#0b0d12;
- color:#aeb5c2;
+.info{
+ margin-top:12px;
+ min-height:20px;
+ text-align:center;
  font-size:13px;
- line-height:1.5;
+ color:#9299a7;
  word-break:break-word
 }
 
-.ok{
- color:#72e3a0!important
+.error{
+ color:#ff7781
 }
 
-.err{
- color:#ff737e!important
+.success{
+ color:#72dfa0
 }
 
-.hidden{
- display:none!important
-}
-
-.room{
- max-width:900px;
- margin:30px auto
-}
+/* ROOM */
 
 .roomHead{
  display:flex;
- justify-content:space-between;
  align-items:center;
- gap:15px;
- margin-bottom:15px
+ justify-content:space-between;
+ gap:10px;
+ margin:8px 0 15px
 }
 
 .roomTitle{
@@ -124,28 +131,44 @@ button:disabled{
  font-weight:900
 }
 
-.code{
- color:#999;
+.roomCode{
+ color:#858c9a;
  font-size:13px;
- margin-top:4px
+ margin-top:3px
 }
 
-.code b{
+.roomCode b{
  color:#fff;
  letter-spacing:3px
 }
+
+.leave{
+ width:auto;
+ margin:0;
+ background:#29171b;
+ color:#ff9da5
+}
+
+.layout{
+ display:grid;
+ grid-template-columns:minmax(0,1fr) 300px;
+ gap:14px
+}
+
+/* VIDEO */
 
 .video{
  width:100%;
  aspect-ratio:16/9;
  background:#000;
  border-radius:16px;
+ overflow:hidden;
  display:flex;
- align-items:center;
  justify-content:center;
- color:#777;
+ align-items:center;
  text-align:center;
- overflow:hidden
+ color:#777f8e;
+ padding:20px
 }
 
 .video iframe{
@@ -154,13 +177,19 @@ button:disabled{
  border:0
 }
 
+.videoInfo{
+ color:#858c99;
+ line-height:1.5
+}
+
 .videoTools{
  display:flex;
  gap:7px;
- margin-top:8px
+ margin-top:9px
 }
 
 .videoTools input{
+ min-width:0;
  flex:1
 }
 
@@ -170,17 +199,51 @@ button:disabled{
  padding:0 18px
 }
 
-.chat{
- margin-top:15px;
+.hint{
+ color:#777f8e;
+ font-size:11px;
+ margin-top:7px
+}
+
+/* SIDE */
+
+.box{
  background:#11131a;
  border:1px solid #292d38;
  border-radius:15px;
- padding:14px
+ padding:13px
+}
+
+.boxTitle{
+ font-weight:900;
+ margin-bottom:10px
+}
+
+.users{
+ display:flex;
+ flex-wrap:wrap;
+ gap:6px
+}
+
+.user{
+ background:#1b2029;
+ border-radius:20px;
+ padding:7px 10px;
+ font-size:13px
+}
+
+/* CHAT */
+
+.chat{
+ height:360px;
+ display:flex;
+ flex-direction:column;
+ margin-top:12px
 }
 
 .messages{
- height:250px;
- overflow:auto;
+ flex:1;
+ overflow-y:auto;
  display:flex;
  flex-direction:column;
  gap:7px
@@ -188,38 +251,62 @@ button:disabled{
 
 .message{
  background:#1b1f28;
+ padding:8px 10px;
  border-radius:9px;
- padding:8px
+ font-size:13px;
+ word-break:break-word
 }
 
 .messageName{
+ color:#9299a7;
  font-size:11px;
- color:#999;
+ font-weight:700;
  margin-bottom:3px
 }
 
 .send{
  display:flex;
- gap:7px;
+ gap:6px;
  margin-top:8px
 }
 
 .send input{
+ min-width:0;
  flex:1
 }
 
 .send button{
- width:50px;
+ width:48px;
  margin:0;
  padding:0
 }
 
-.leave{
- background:#29171b;
- color:#ff9da5;
- width:auto;
- padding:10px 15px;
- margin:0
+@media(max-width:720px){
+
+ .layout{
+  grid-template-columns:1fr
+ }
+
+ .home{
+  margin:40px auto
+ }
+
+ .chat{
+  height:300px
+ }
+
+}
+
+@media(max-width:430px){
+
+ #app{
+  padding:10px
+ }
+
+ .logo{
+  font-size:27px
+ }
+
 }
 </style>
 </head>
@@ -228,126 +315,238 @@ button:disabled{
 
 <div id="app">
 
- <!-- HOME -->
+<!-- HOME -->
 
- <div id="home" class="card">
+<section id="home">
 
-  <h1>Томас ❤️ Яна</h1>
+ <div class="home">
 
-  <div class="sub">
-   Комната для просмотра вместе
+  <div class="logo">
+   Томас ❤️ Яна
   </div>
 
-  <label>Имя</label>
+  <div class="subtitle">
+   Смотрим вместе
+  </div>
 
-  <input
-   id="name"
-   maxlength="20"
-   placeholder="Томас"
-   autocomplete="off"
-  >
+  <div class="card">
 
-  <button id="create">
-   ❤️ Создать комнату
-  </button>
+   <label>Имя</label>
 
-  <button
-   id="test"
-   style="background:#1b1f28;color:white"
-  >
-   🔧 Проверить Supabase
-  </button>
+   <input
+    id="name"
+    maxlength="20"
+    placeholder="Томас"
+    autocomplete="off"
+   >
 
-  <div id="status">
-   Готово к проверке.
+   <button id="createBtn">
+    ❤️ Создать комнату
+   </button>
+
+   <button
+    id="joinBtn"
+    class="secondary"
+   >
+    🔑 Войти по коду
+   </button>
+
+   <div
+    id="homeStatus"
+    class="info"
+   ></div>
+
   </div>
 
  </div>
 
+</section>
 
- <!-- ROOM -->
 
- <div id="room" class="room hidden">
+<!-- ROOM -->
 
-  <div class="roomHead">
+<section
+ id="room"
+ class="hidden"
+>
 
-   <div>
+ <div class="roomHead">
 
-    <div class="roomTitle">
-     Томас ❤️ Яна
-    </div>
+  <div>
 
-    <div class="code">
-     Код комнаты:
-     <b id="code"></b>
-    </div>
-
+   <div class="roomTitle">
+    Томас ❤️ Яна
    </div>
 
-   <button
-    id="leave"
-    class="leave"
-   >
-    Выйти
-   </button>
+   <div class="roomCode">
+    Код:
+    <b id="roomCode"></b>
+   </div>
 
   </div>
 
-
-  <div
-   id="video"
-   class="video"
+  <button
+   id="leaveBtn"
+   class="leave"
   >
-   🎬<br><br>
-   Вставь видео VK
-  </div>
+   Выйти
+  </button>
+
+ </div>
 
 
-  <div class="videoTools">
+ <div class="layout">
 
-   <input
-    id="videoUrl"
-    placeholder="Ссылка или iframe VK"
-   >
-
-   <button id="saveVideo">
-    OK
-   </button>
-
-  </div>
-
-
-  <div
-   id="roomStatus"
-   style="margin-top:10px;color:#888"
-  ></div>
-
-
-  <div class="chat">
-
-   <b>💬 Чат</b>
+  <main>
 
    <div
-    id="messages"
-    class="messages"
-    style="margin-top:10px"
-   ></div>
+    id="video"
+    class="video"
+   >
+    <div class="videoInfo">
+     🎬<br><br>
+     Вставь ссылку на VK Video
+    </div>
+   </div>
 
-   <div class="send">
+
+   <div class="videoTools">
 
     <input
-     id="message"
-     maxlength="300"
-     placeholder="Написать..."
+     id="videoUrl"
+     placeholder="https://vk.com/video..."
     >
 
-    <button id="send">
-     ➤
+    <button id="videoBtn">
+     Смотреть
     </button>
 
    </div>
 
-  </div>
+   <div class="hint">
+    Можно вставить ссылку VK Video или готовый iframe-код VK.
+   </div>
+
+
+   <div
+    id="roomStatus"
+    class="info"
+   ></div>
+
+
+   <div class="box chat">
+
+    <div class="boxTitle">
+     💬 Чат
+    </div>
+
+    <div
+     id="messages"
+     class="messages"
+    ></div>
+
+    <div class="send">
+
+     <input
+      id="message"
+      maxlength="300"
+      placeholder="Написать..."
+     >
+
+     <button id="sendBtn">
+      ➤
+     </button>
+
+    </div>
+
+   </div>
+
+  </main>
+
+
+  <aside>
+
+   <div class="box">
+
+    <div class="boxTitle">
+     👥 В комнате
+    </div>
+
+    <div
+     id="users"
+     class="users"
+    ></div>
+
+   </div>
+
+  </aside>
+
+ </div>
+
+</section>
+
+</div>
+
+
+<!-- JOIN -->
+
+<div
+ id="joinModal"
+ class="hidden"
+ style="
+  position:fixed;
+  inset:0;
+  background:#000c;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+ "
+>
+
+ <div
+  class="card"
+  style="width:100%;max-width:390px"
+ >
+
+  <button
+   id="closeJoin"
+   style="
+    float:right;
+    width:auto;
+    margin:0;
+    padding:5px 10px;
+    background:none;
+    color:#888;
+    font-size:25px
+   "
+  >
+   ×
+  </button>
+
+  <h2>
+   Войти в комнату
+  </h2>
+
+  <label>
+   Код комнаты
+  </label>
+
+  <input
+   id="joinCode"
+   maxlength="6"
+   placeholder="ABC123"
+   style="text-transform:uppercase"
+  >
+
+  <button id="confirmJoin">
+   Войти
+  </button>
+
+  <div
+   id="joinStatus"
+   class="info"
+  ></div>
 
  </div>
 
@@ -356,111 +555,72 @@ button:disabled{
 
 <script>
 
-/* ==========================================
+/* =========================================
    SUPABASE
-========================================== */
+========================================= */
 
-const SUPABASE_URL =
+const SUPABASE_URL=
 "https://qyjvkiusyiylckaujjiv.supabase.co";
 
-const SUPABASE_KEY =
+const SUPABASE_KEY=
 "sb_publishable_dwxrSiVkIY5C8PKu--_UlA_phF5hvRy";
 
-
-const db =
+const db=
 window.supabase.createClient(
  SUPABASE_URL,
  SUPABASE_KEY
 );
 
 
-/* ==========================================
+/* =========================================
    STATE
-========================================== */
+========================================= */
 
-let currentRoom=null;
-let currentName="";
+let room=null;
+let name="";
 
-let channel=null;
+let realtime=null;
 
 
-/* ==========================================
+/* =========================================
    HELPERS
-========================================== */
+========================================= */
 
 const $=id=>
  document.getElementById(id);
 
 
-function status(text,type=""){
+function homeStatus(text,type=""){
 
- $("status").textContent=text;
+ $("homeStatus").textContent=text;
 
- $("status").className=type;
+ $("homeStatus").className=
+  "info "+type;
 
 }
 
 
-function roomStatus(text){
+function roomStatus(text,type=""){
 
  $("roomStatus").textContent=text;
 
-}
-
-
-/* ==========================================
-   SUPABASE TEST
-========================================== */
-
-async function testSupabase(){
-
- status(
-  "⏳ Проверяем подключение к Supabase..."
- );
-
-
- try{
-
-  const result=
-   await db
-    .from("rooms")
-    .select("id")
-    .limit(1);
-
-
-  if(result.error){
-
-   throw result.error;
-
-  }
-
-
-  status(
-   "🟢 Supabase подключён! Таблица rooms доступна.",
-   "ok"
-  );
-
-
- }catch(error){
-
-  console.error(error);
-
-  status(
-   "🔴 Supabase ERROR: "+
-   (error.message || error),
-   "err"
-  );
-
- }
+ $("roomStatus").className=
+  "info "+type;
 
 }
 
 
-/* ==========================================
-   CODE
-========================================== */
+function joinStatus(text,type=""){
 
-function generateCode(){
+ $("joinStatus").textContent=text;
+
+ $("joinStatus").className=
+  "info "+type;
+
+}
+
+
+function code(){
 
  const chars=
  "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
@@ -482,80 +642,43 @@ function generateCode(){
 }
 
 
-/* ==========================================
+/* =========================================
    CREATE ROOM
-========================================== */
+========================================= */
 
 async function createRoom(){
 
- const name=
+ const userName=
   $("name").value.trim();
 
 
- if(!name){
+ if(!userName){
 
-  status(
-   "🔴 Сначала введи имя.",
-   "err"
+  homeStatus(
+   "❌ Введи имя",
+   "error"
   );
-
-  $("name").focus();
 
   return;
 
  }
 
 
- currentName=
-  name.substring(0,20);
+ name=
+  userName.substring(0,20);
 
 
- const button=
-  $("create");
-
- button.disabled=true;
+ $("createBtn").disabled=true;
 
 
- status(
-  "⏳ 1/4 Проверяем Supabase..."
+ homeStatus(
+  "⏳ Создаём комнату..."
  );
 
 
  try{
 
-  /* 1 */
-
-  const check=
-   await db
-    .from("rooms")
-    .select("id")
-    .limit(1);
-
-
-  if(check.error){
-
-   throw new Error(
-    "rooms недоступна: "+
-    check.error.message
-   );
-
-  }
-
-
-  status(
-   "🟢 2/4 Таблица rooms работает..."
-  );
-
-
-  /* 2 */
-
-  const code=
-   generateCode();
-
-
-  status(
-   "⏳ 3/4 Создаём комнату "+code+"..."
-  );
+  const newCode=code();
 
 
   const result=
@@ -563,9 +686,9 @@ async function createRoom(){
     .from("rooms")
     .insert({
 
-     code:code,
+     code:newCode,
 
-     host_name:currentName,
+     host_name:name,
 
      video_url:"",
 
@@ -579,20 +702,13 @@ async function createRoom(){
   if(result.error){
 
    throw new Error(
-    "INSERT rooms: "+
     result.error.message
    );
 
   }
 
 
-  currentRoom=
-   result.data;
-
-
-  status(
-   "🟢 4/4 Комната создана. Добавляем тебя..."
-  );
+  room=result.data;
 
 
   const user=
@@ -600,9 +716,9 @@ async function createRoom(){
     .from("room_users")
     .insert({
 
-     room_id:currentRoom.id,
+     room_id:room.id,
 
-     user_name:currentName
+     user_name:name
 
     });
 
@@ -610,17 +726,10 @@ async function createRoom(){
   if(user.error){
 
    throw new Error(
-    "INSERT room_users: "+
     user.error.message
    );
 
   }
-
-
-  status(
-   "🟢 Комната успешно создана!",
-   "ok"
-  );
 
 
   openRoom();
@@ -630,67 +739,215 @@ async function createRoom(){
 
   console.error(error);
 
-
-  status(
-   "🔴 ОШИБКА: "+
-   (error.message || error),
-   "err"
+  homeStatus(
+   "❌ "+error.message,
+   "error"
   );
-
 
  }finally{
 
-  button.disabled=false;
+  $("createBtn").disabled=false;
 
  }
 
 }
 
 
-/* ==========================================
-   OPEN ROOM
-========================================== */
+/* =========================================
+   JOIN
+========================================= */
 
-async function openRoom(){
+$("joinBtn").onclick=()=>{
 
- $("home")
-  .classList.add("hidden");
-
-
- $("room")
+ $("joinModal")
   .classList.remove("hidden");
 
+ $("joinCode").focus();
 
- $("code").textContent=
-  currentRoom.code;
-
-
- loadMessages();
-
- subscribe();
-
-}
+};
 
 
-/* ==========================================
-   VIDEO
-========================================== */
+$("closeJoin").onclick=()=>{
 
-function showVideo(value){
+ $("joinModal")
+  .classList.add("hidden");
 
- if(!value){
+};
 
-  $("video").innerHTML=
-   "🎬<br><br>Вставь видео VK";
+
+async function joinRoom(){
+
+ const userName=
+  $("name").value.trim();
+
+
+ if(!userName){
+
+  joinStatus(
+   "Сначала введи имя",
+   "error"
+  );
+
+  $("joinModal")
+   .classList.add("hidden");
+
+  $("name").focus();
 
   return;
 
  }
 
 
+ const roomCode=
+  $("joinCode")
+   .value
+   .trim()
+   .toUpperCase();
+
+
+ if(roomCode.length!==6){
+
+  joinStatus(
+   "❌ Код должен быть из 6 символов",
+   "error"
+  );
+
+  return;
+
+ }
+
+
+ name=
+  userName.substring(0,20);
+
+
+ joinStatus(
+  "⏳ Ищем комнату..."
+ );
+
+
+ try{
+
+  const result=
+   await db
+    .from("rooms")
+    .select("*")
+    .eq("code",roomCode)
+    .maybeSingle();
+
+
+  if(result.error){
+
+   throw new Error(
+    result.error.message
+   );
+
+  }
+
+
+  if(!result.data){
+
+   joinStatus(
+    "❌ Комната не найдена",
+    "error"
+   );
+
+   return;
+
+  }
+
+
+  room=result.data;
+
+
+  const user=
+   await db
+    .from("room_users")
+    .insert({
+
+     room_id:room.id,
+
+     user_name:name
+
+    });
+
+
+  if(user.error){
+
+   throw new Error(
+    user.error.message
+   );
+
+  }
+
+
+  $("joinModal")
+   .classList.add("hidden");
+
+
+  openRoom();
+
+
+ }catch(error){
+
+  joinStatus(
+   "❌ "+error.message,
+   "error"
+  );
+
+ }
+
+}
+
+
+/* =========================================
+   OPEN ROOM
+========================================= */
+
+async function openRoom(){
+
+ $("home")
+  .classList.add("hidden");
+
+ $("room")
+  .classList.remove("hidden");
+
+
+ $("roomCode").textContent=
+  room.code;
+
+
+ $("videoUrl").value=
+  room.video_url || "";
+
+
+ if(room.video_url)
+  showVideo(room.video_url);
+
+
+ await loadUsers();
+
+ await loadMessages();
+
+ subscribe();
+
+}
+
+
+/* =========================================
+   VK VIDEO
+========================================= */
+
+function showVideo(value){
+
  let src=
   value.trim();
 
+
+ /*
+  Если пользователь вставил iframe VK,
+  вытаскиваем src.
+ */
 
  if(src.includes("<iframe")){
 
@@ -704,6 +961,75 @@ function showVideo(value){
 
  }
 
+
+ /*
+  Если это уже embed-ссылка
+ */
+
+ if(
+  src.includes("vk.com/video_ext.php") ||
+  src.includes("vk.ru/video_ext.php")
+ ){
+
+  createPlayer(src);
+
+  return;
+
+ }
+
+
+ /*
+  Обычная ссылка VK.
+  Саму страницу vk.com/video...
+  нельзя надёжно вставить в iframe.
+ */
+
+ if(
+  src.includes("vk.com/video") ||
+  src.includes("vk.ru/video")
+ ){
+
+  $("video").innerHTML=`
+   <div class="videoInfo">
+    ⚠️ Это обычная ссылка VK Video.<br><br>
+    Для встроенного просмотра нужен
+    <b>iframe / embed-код VK</b>.<br><br>
+    Открой видео VK → «Поделиться» →
+    «Код для вставки» и вставь его сюда.
+   </div>
+  `;
+
+  return;
+
+ }
+
+
+ /*
+  Любой другой HTTPS iframe URL
+ */
+
+ if(
+  src.startsWith("https://") ||
+  src.startsWith("http://")
+ ){
+
+  createPlayer(src);
+
+  return;
+
+ }
+
+
+ $("video").innerHTML=`
+  <div class="videoInfo">
+   ❌ Не удалось распознать ссылку.
+  </div>
+ `;
+
+}
+
+
+function createPlayer(src){
 
  const iframe=
   document.createElement("iframe");
@@ -725,10 +1051,14 @@ function showVideo(value){
 }
 
 
-$("saveVideo").onclick=
+/* =========================================
+   SAVE VIDEO
+========================================= */
+
+$("videoBtn").onclick=
  async()=>{
 
-  if(!currentRoom)return;
+  if(!room)return;
 
 
   const value=
@@ -740,7 +1070,8 @@ $("saveVideo").onclick=
   if(!value){
 
    roomStatus(
-    "Вставь ссылку VK."
+    "❌ Вставь видео VK",
+    "error"
    );
 
    return;
@@ -756,15 +1087,17 @@ $("saveVideo").onclick=
     })
     .eq(
      "id",
-     currentRoom.id
-    );
+     room.id
+    )
+    .select()
+    .single();
 
 
   if(result.error){
 
    roomStatus(
-    "Ошибка: "+
-    result.error.message
+    "❌ "+result.error.message,
+    "error"
    );
 
    return;
@@ -772,22 +1105,79 @@ $("saveVideo").onclick=
   }
 
 
+  room=result.data;
+
   showVideo(value);
 
   roomStatus(
-   "🎬 Видео сохранено для комнаты."
+   "🎬 Видео сохранено",
+   "success"
   );
 
- };
+};
 
 
-/* ==========================================
+/* =========================================
+   USERS
+========================================= */
+
+async function loadUsers(){
+
+ if(!room)return;
+
+
+ const result=
+  await db
+   .from("room_users")
+   .select("*")
+   .eq(
+    "room_id",
+    room.id
+   )
+   .order(
+    "created_at",
+    {ascending:true}
+   );
+
+
+ if(result.error){
+
+  console.error(result.error);
+
+  return;
+
+ }
+
+
+ $("users").innerHTML="";
+
+
+ (result.data||[])
+  .forEach(user=>{
+
+   const el=
+    document.createElement("div");
+
+   el.className="user";
+
+   el.textContent=
+    "🟢 "+user.user_name;
+
+   $("users")
+    .appendChild(el);
+
+  });
+
+}
+
+
+/* =========================================
    CHAT
-========================================== */
+========================================= */
 
 async function loadMessages(){
 
- if(!currentRoom)return;
+ if(!room)return;
 
 
  const result=
@@ -796,12 +1186,13 @@ async function loadMessages(){
    .select("*")
    .eq(
     "room_id",
-    currentRoom.id
+    room.id
    )
    .order(
     "created_at",
     {ascending:true}
-   );
+   )
+   .limit(100);
 
 
  if(result.error){
@@ -827,20 +1218,18 @@ async function loadMessages(){
 
 function renderMessage(item){
 
- const div=
+ const el=
   document.createElement("div");
 
- div.className=
-  "message";
+ el.className="message";
 
 
- const name=
+ const user=
   document.createElement("div");
 
- name.className=
-  "messageName";
+ user.className="messageName";
 
- name.textContent=
+ user.textContent=
   item.user_name;
 
 
@@ -851,13 +1240,13 @@ function renderMessage(item){
   item.message;
 
 
- div.appendChild(name);
+ el.appendChild(user);
 
- div.appendChild(text);
+ el.appendChild(text);
 
 
  $("messages")
-  .appendChild(div);
+  .appendChild(el);
 
 }
 
@@ -872,12 +1261,11 @@ function scrollChat(){
 
 async function sendMessage(){
 
- if(!currentRoom)return;
+ if(!room)return;
 
 
  const input=
   $("message");
-
 
  const text=
   input.value.trim();
@@ -894,9 +1282,9 @@ async function sendMessage(){
    .from("messages")
    .insert({
 
-    room_id:currentRoom.id,
+    room_id:room.id,
 
-    user_name:currentName,
+    user_name:name,
 
     message:text
 
@@ -906,8 +1294,9 @@ async function sendMessage(){
  if(result.error){
 
   roomStatus(
-   "Ошибка чата: "+
-   result.error.message
+   "❌ Чат: "+
+   result.error.message,
+   "error"
   );
 
  }
@@ -915,7 +1304,7 @@ async function sendMessage(){
 }
 
 
-$("send").onclick=
+$("sendBtn").onclick=
  sendMessage;
 
 
@@ -930,19 +1319,19 @@ $("message").addEventListener(
 );
 
 
-/* ==========================================
+/* =========================================
    REALTIME
-========================================== */
+========================================= */
 
 function subscribe(){
 
- if(!currentRoom)return;
+ if(!room)return;
 
 
- channel=
+ realtime=
   db
    .channel(
-    "room-"+currentRoom.id
+    "room-"+room.id
    )
 
    .on(
@@ -952,27 +1341,51 @@ function subscribe(){
      schema:"public",
      table:"rooms",
      filter:
-      "id=eq."+currentRoom.id
+      "id=eq."+room.id
     },
     payload=>{
 
-     currentRoom=
+     room=
       payload.new;
 
 
-     if(
-      payload.new.video_url
-     ){
+     $("videoUrl").value=
+      room.video_url || "";
 
-      $("videoUrl").value=
-       payload.new.video_url;
 
+     if(room.video_url)
       showVideo(
-       payload.new.video_url
+       room.video_url
       );
 
-     }
+    }
+   )
 
+   .on(
+    "postgres_changes",
+    {
+     event:"INSERT",
+     schema:"public",
+     table:"room_users",
+     filter:
+      "room_id=eq."+room.id
+    },
+    ()=>{
+     loadUsers();
+    }
+   )
+
+   .on(
+    "postgres_changes",
+    {
+     event:"DELETE",
+     schema:"public",
+     table:"room_users",
+     filter:
+      "room_id=eq."+room.id
+    },
+    ()=>{
+     loadUsers();
     }
    )
 
@@ -983,9 +1396,14 @@ function subscribe(){
      schema:"public",
      table:"messages",
      filter:
-      "room_id=eq."+currentRoom.id
+      "room_id=eq."+room.id
     },
     payload=>{
+
+     /*
+      Не дублируем собственное сообщение,
+      если Realtime вернул его.
+     */
 
      renderMessage(
       payload.new
@@ -1001,39 +1419,41 @@ function subscribe(){
 }
 
 
-/* ==========================================
+/* =========================================
    LEAVE
-========================================== */
+========================================= */
 
-$("leave").onclick=
+$("leaveBtn").onclick=
  async()=>{
 
-  if(currentRoom){
+  if(room){
 
    await db
     .from("room_users")
     .delete()
     .eq(
      "room_id",
-     currentRoom.id
+     room.id
     )
     .eq(
      "user_name",
-     currentName
+     name
     );
 
   }
 
 
-  if(channel){
+  if(realtime){
 
    await db
-    .removeChannel(channel);
+    .removeChannel(
+     realtime
+    );
 
   }
 
 
-  currentRoom=null;
+  room=null;
 
 
   $("room")
@@ -1043,22 +1463,23 @@ $("leave").onclick=
    .classList.remove("hidden");
 
 
-  status(
-   "Ты вышел из комнаты."
+  homeStatus(
+   "Ты вышел из комнаты.",
+   "success"
   );
 
- };
+};
 
 
-/* ==========================================
-   EVENTS
-========================================== */
+/* =========================================
+   BUTTONS
+========================================= */
 
-$("test").onclick=
- testSupabase;
-
-$("create").onclick=
+$("createBtn").onclick=
  createRoom;
+
+$("confirmJoin").onclick=
+ joinRoom;
 
 
 $("name").addEventListener(
@@ -1067,6 +1488,17 @@ $("name").addEventListener(
 
   if(e.key==="Enter")
    createRoom();
+
+ }
+);
+
+
+$("joinCode").addEventListener(
+ "keydown",
+ e=>{
+
+  if(e.key==="Enter")
+   joinRoom();
 
  }
 );
