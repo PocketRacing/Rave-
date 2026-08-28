@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
 <title>Томас ❤️ Яна</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -13,9 +14,9 @@
 body{
  margin:0;
  min-height:100vh;
- background:#090a0f;
+ background:#08090d;
  color:#fff;
- font-family:Arial,Helvetica,sans-serif
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
 }
 
 button,input{
@@ -23,60 +24,55 @@ button,input{
 }
 
 button{
- border:0;
  cursor:pointer
 }
 
-.app{
+#app{
  width:100%;
- max-width:950px;
+ max-width:900px;
  margin:auto;
  padding:15px
 }
 
-.hidden{display:none!important}
-
-/* HOME */
+.card{
+ background:#11131a;
+ border:1px solid #292d38;
+ border-radius:20px;
+ padding:20px
+}
 
 .home{
  max-width:430px;
- margin:70px auto 0;
- text-align:center
+ margin:70px auto
 }
 
 .logo{
- font-size:31px;
+ text-align:center;
+ font-size:30px;
  font-weight:900;
  margin-bottom:7px
 }
 
-.subtitle{
- color:#9298a6;
+.sub{
+ text-align:center;
+ color:#858b99;
  margin-bottom:25px
-}
-
-.card{
- background:#11131a;
- border:1px solid #252936;
- border-radius:18px;
- padding:18px;
- text-align:left
 }
 
 label{
  display:block;
- color:#9298a6;
+ color:#9298a5;
  font-size:13px;
- margin:0 0 7px
+ margin-bottom:7px
 }
 
 input{
  width:100%;
- background:#090b10;
- border:1px solid #303442;
- border-radius:11px;
- color:#fff;
  padding:14px;
+ border-radius:12px;
+ border:1px solid #343844;
+ background:#080a0f;
+ color:#fff;
  outline:none
 }
 
@@ -86,102 +82,116 @@ input:focus{
 
 .btn{
  width:100%;
+ border:0;
+ border-radius:12px;
  padding:14px;
- margin-top:9px;
- border-radius:11px;
+ margin-top:10px;
  font-weight:800
 }
 
-.primary{
+.create{
  background:#fff;
- color:#08090c
+ color:#000
 }
 
-.secondary{
- background:#1b1e27;
+.join{
+ background:#1c2029;
  color:#fff;
- border:1px solid #303442
+ border:1px solid #303541
 }
 
-.status{
- color:#7e8696;
+.info{
+ margin-top:15px;
+ min-height:20px;
  text-align:center;
- font-size:12px;
- min-height:18px;
- margin-top:12px
+ color:#9ca3b2;
+ font-size:13px;
+ word-break:break-word
+}
+
+.error{
+ color:#ff7d87
+}
+
+.success{
+ color:#75e0a1
+}
+
+.hidden{
+ display:none!important
 }
 
 /* ROOM */
 
-.roomHead{
+.roomTop{
  display:flex;
- align-items:center;
  justify-content:space-between;
+ align-items:center;
  gap:10px;
- margin:10px 0 14px
+ margin-bottom:15px
 }
 
-.roomTitle{
+.title{
  font-size:21px;
  font-weight:900
 }
 
-.roomCode{
- color:#858c9b;
+.code{
+ color:#888f9d;
  font-size:12px;
- margin-top:4px
+ margin-top:3px
 }
 
-.roomCode b{
+.code b{
  color:#fff;
  letter-spacing:2px
 }
 
 .leave{
- background:#29171a;
- color:#ff9da4;
+ border:0;
+ border-radius:10px;
  padding:10px 13px;
- border-radius:10px
+ background:#2a171b;
+ color:#ff9da4
 }
 
-.layout{
+.grid{
  display:grid;
  grid-template-columns:minmax(0,1fr) 300px;
  gap:14px
 }
 
-/* VIDEO */
-
-.videoBox{
- width:100%;
+.video{
  aspect-ratio:16/9;
+ width:100%;
  background:#000;
  border-radius:16px;
  overflow:hidden;
  display:flex;
  align-items:center;
  justify-content:center;
- color:#727987;
+ color:#747b89;
  text-align:center
 }
 
-.videoBox iframe{
+.video iframe{
  width:100%;
  height:100%;
  border:0
 }
 
-.videoAdd{
+.videoInput{
  display:flex;
  gap:7px;
  margin-top:9px
 }
 
-.videoAdd input{
- margin:0
+.videoInput input{
+ min-width:0
 }
 
-.videoAdd button{
+.videoInput button{
+ border:0;
  background:#fff;
  color:#000;
  padding:0 15px;
@@ -191,39 +201,30 @@ input:focus{
 
 .controls{
  display:flex;
- gap:8px;
- margin-top:9px
+ gap:7px;
+ margin-top:8px
 }
 
 .controls button{
  flex:1;
- background:#191d26;
- color:#fff;
+ padding:12px;
+ border:0;
  border-radius:10px;
- padding:12px
+ background:#191d25;
+ color:#fff
 }
 
-/* PANELS */
-
-.panel{
- display:flex;
- flex-direction:column;
- gap:12px
-}
-
-.panelBox{
+.box{
  background:#11131a;
- border:1px solid #252936;
+ border:1px solid #292d38;
  border-radius:15px;
- padding:14px
+ padding:13px
 }
 
-.panelTitle{
+.boxTitle{
  font-weight:900;
  margin-bottom:10px
 }
-
-/* USERS */
 
 .users{
  display:flex;
@@ -232,16 +233,14 @@ input:focus{
 }
 
 .user{
- background:#1b1f28;
- padding:7px 10px;
+ padding:7px 9px;
  border-radius:20px;
+ background:#1b2029;
  font-size:13px
 }
 
-/* CHAT */
-
 .chat{
- height:350px;
+ height:360px;
  display:flex;
  flex-direction:column
 }
@@ -254,33 +253,34 @@ input:focus{
  gap:7px
 }
 
-.message{
- background:#1a1e27;
- padding:8px 10px;
+.msg{
+ background:#1b1f28;
  border-radius:9px;
+ padding:8px 10px;
  font-size:13px;
  word-break:break-word
 }
 
-.message b{
- display:block;
+.msgName{
+ color:#9299a8;
  font-size:11px;
- color:#9299aa;
- margin-bottom:3px
+ margin-bottom:3px;
+ font-weight:700
 }
 
-.chatSend{
+.send{
  display:flex;
  gap:6px;
  margin-top:8px
 }
 
-.chatSend input{
- margin:0
+.send input{
+ min-width:0
 }
 
-.chatSend button{
+.send button{
  width:45px;
+ border:0;
  border-radius:9px;
  background:#fff;
  color:#000;
@@ -292,44 +292,43 @@ input:focus{
 .modal{
  position:fixed;
  inset:0;
- background:#000b;
+ background:#000c;
  display:flex;
  align-items:center;
  justify-content:center;
  padding:18px;
- z-index:20
+ z-index:100
 }
 
-.modalBox{
+.modalCard{
  width:100%;
- max-width:400px;
+ max-width:390px;
  background:#11131a;
- border:1px solid #292e3a;
+ border:1px solid #292d38;
  border-radius:18px;
- padding:18px
+ padding:20px
 }
 
-.modalBox h2{
- margin-top:0
+.modalCard h2{
+ margin:0 0 18px
 }
 
 .close{
  float:right;
  background:none;
+ border:0;
  color:#888;
- font-size:26px
+ font-size:27px
 }
 
-/* MOBILE */
+@media(max-width:700px){
 
-@media(max-width:750px){
-
- .layout{
+ .grid{
   grid-template-columns:1fr
  }
 
  .home{
-  margin-top:45px
+  margin:40px auto
  }
 
  .chat{
@@ -338,26 +337,14 @@ input:focus{
 
 }
 
-@media(max-width:450px){
+@media(max-width:430px){
 
- .app{
+ #app{
   padding:10px
  }
 
  .logo{
   font-size:27px
- }
-
- .roomTitle{
-  font-size:18px
- }
-
- .roomHead{
-  align-items:flex-start
- }
-
- .videoAdd input{
-  min-width:0
  }
 
 }
@@ -366,7 +353,9 @@ input:focus{
 
 <body>
 
-<div class="app">
+<div id="app">
+
+<!-- HOME -->
 
 <section id="home">
 
@@ -376,37 +365,38 @@ input:focus{
    Томас ❤️ Яна
   </div>
 
-  <div class="subtitle">
+  <div class="sub">
    Смотрим вместе
   </div>
 
   <div class="card">
 
-   <label>Твоё имя</label>
+   <label>Имя</label>
 
    <input
     id="name"
     maxlength="20"
-    placeholder="Томас или Яна"
+    autocomplete="off"
+    placeholder="Например: Томас"
    >
 
    <button
-    class="btn primary"
-    onclick="createRoom()"
+    class="btn create"
+    id="createBtn"
    >
     ❤️ Создать комнату
    </button>
 
    <button
-    class="btn secondary"
-    onclick="openJoin()"
+    class="btn join"
+    id="joinBtn"
    >
     🔑 Войти по коду
    </button>
 
    <div
-    id="homeStatus"
-    class="status"
+    id="homeInfo"
+    class="info"
    ></div>
 
   </div>
@@ -416,21 +406,23 @@ input:focus{
 </section>
 
 
+<!-- ROOM -->
+
 <section
  id="room"
  class="hidden"
 >
 
- <div class="roomHead">
+ <div class="roomTop">
 
   <div>
 
-   <div class="roomTitle">
+   <div class="title">
     Томас ❤️ Яна
    </div>
 
-   <div class="roomCode">
-    Комната:
+   <div class="code">
+    Код:
     <b id="roomCode"></b>
    </div>
 
@@ -438,7 +430,7 @@ input:focus{
 
   <button
    class="leave"
-   onclick="leaveRoom()"
+   id="leaveBtn"
   >
    Выйти
   </button>
@@ -446,29 +438,29 @@ input:focus{
  </div>
 
 
- <div class="layout">
+ <div class="grid">
 
-  <main>
+  <div>
 
    <div
-    id="videoBox"
-    class="videoBox"
+    id="video"
+    class="video"
    >
     <div>
      🎬<br><br>
-     Здесь появится видео VK
+     Добавьте видео VK
     </div>
    </div>
 
 
-   <div class="videoAdd">
+   <div class="videoInput">
 
     <input
      id="videoUrl"
-     placeholder="Вставь ссылку или iframe VK"
+     placeholder="Ссылка или iframe VK"
     >
 
-    <button onclick="setVideo()">
+    <button id="videoBtn">
      OK
     </button>
 
@@ -477,11 +469,11 @@ input:focus{
 
    <div class="controls">
 
-    <button onclick="playVideo()">
+    <button id="playBtn">
      ▶️ Смотреть
     </button>
 
-    <button onclick="pauseVideo()">
+    <button id="pauseBtn">
      ⏸ Пауза
     </button>
 
@@ -489,18 +481,18 @@ input:focus{
 
 
    <div
-    id="roomStatus"
-    class="status"
+    id="roomInfo"
+    class="info"
    ></div>
 
-  </main>
+  </div>
 
 
-  <aside class="panel">
+  <div>
 
-   <div class="panelBox">
+   <div class="box">
 
-    <div class="panelTitle">
+    <div class="boxTitle">
      👥 В комнате
     </div>
 
@@ -512,9 +504,12 @@ input:focus{
    </div>
 
 
-   <div class="panelBox chat">
+   <div
+    class="box chat"
+    style="margin-top:12px"
+   >
 
-    <div class="panelTitle">
+    <div class="boxTitle">
      💬 Чат
     </div>
 
@@ -523,7 +518,7 @@ input:focus{
      class="messages"
     ></div>
 
-    <div class="chatSend">
+    <div class="send">
 
      <input
       id="message"
@@ -531,7 +526,7 @@ input:focus{
       placeholder="Написать..."
      >
 
-     <button onclick="sendMessage()">
+     <button id="sendBtn">
       ➤
      </button>
 
@@ -539,7 +534,7 @@ input:focus{
 
    </div>
 
-  </aside>
+  </div>
 
  </div>
 
@@ -548,16 +543,18 @@ input:focus{
 </div>
 
 
+<!-- JOIN -->
+
 <div
  id="joinModal"
  class="modal hidden"
 >
 
- <div class="modalBox">
+ <div class="modalCard">
 
   <button
    class="close"
-   onclick="closeJoin()"
+   id="closeJoin"
   >
    ×
   </button>
@@ -569,20 +566,21 @@ input:focus{
   <input
    id="joinCode"
    maxlength="6"
+   autocomplete="off"
    placeholder="ABC123"
    style="text-transform:uppercase"
   >
 
   <button
-   class="btn primary"
-   onclick="joinRoom()"
+   class="btn create"
+   id="confirmJoin"
   >
    Войти
   </button>
 
   <div
-   id="joinStatus"
-   class="status"
+   id="joinInfo"
+   class="info"
   ></div>
 
  </div>
@@ -592,9 +590,9 @@ input:focus{
 
 <script>
 
-/* ================================
+/* =========================================
    SUPABASE
-================================ */
+========================================= */
 
 const SUPABASE_URL =
 "https://qyjvkiusyiylckaujjiv.supabase.co";
@@ -602,51 +600,73 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
 "sb_publishable_dwxrSiVkIY5C8PKu--_UlA_phF5hvRy";
 
-const db =
+const supabaseClient =
 window.supabase.createClient(
  SUPABASE_URL,
  SUPABASE_KEY
 );
 
 
-/* ================================
+/* =========================================
    STATE
-================================ */
+========================================= */
 
-let room=null;
-let myName="";
+let currentRoom=null;
+let currentName="";
 
 let roomChannel=null;
-let userChannel=null;
-let messageChannel=null;
+let usersChannel=null;
+let messagesChannel=null;
 
 
-/* ================================
+/* =========================================
    HELPERS
-================================ */
+========================================= */
 
-function $(id){
- return document.getElementById(id);
+const $=id=>
+ document.getElementById(id);
+
+
+function setHome(text,type=""){
+
+ $("homeInfo").textContent=text;
+
+ $("homeInfo").className=
+  "info "+type;
+
 }
 
-function show(id){
- $(id).classList.remove("hidden");
+
+function setJoin(text,type=""){
+
+ $("joinInfo").textContent=text;
+
+ $("joinInfo").className=
+  "info "+type;
+
 }
 
-function hide(id){
- $(id).classList.add("hidden");
+
+function setRoom(text,type=""){
+
+ $("roomInfo").textContent=text;
+
+ $("roomInfo").className=
+  "info "+type;
+
 }
 
-function generateCode(){
+
+function makeCode(){
 
  const chars=
  "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
- let result="";
+ let code="";
 
  for(let i=0;i<6;i++){
 
-  result+=chars[
+  code+=chars[
    Math.floor(
     Math.random()*chars.length
    )
@@ -654,8 +674,10 @@ function generateCode(){
 
  }
 
- return result;
+ return code;
+
 }
+
 
 function getName(){
 
@@ -664,183 +686,290 @@ function getName(){
 
  if(!value){
 
-  alert("Введите имя");
+  setHome(
+   "Сначала введи имя",
+   "error"
+  );
 
   return null;
  }
 
  return value.substring(0,20);
-}
-
-function status(text){
-
- $("roomStatus").textContent=text;
-
- setTimeout(()=>{
-
-  $("roomStatus").textContent="";
-
- },2500);
 
 }
 
 
-/* ================================
-   CREATE ROOM
-================================ */
+/* =========================================
+   CREATE
+========================================= */
 
 async function createRoom(){
 
- myName=getName();
+ const name=getName();
 
- if(!myName)return;
+ if(!name)return;
 
- $("homeStatus").textContent=
- "Создаём комнату...";
+ currentName=name;
 
-
- let roomCode=generateCode();
-
-
- const {data,error}=await db
-  .from("rooms")
-  .insert({
-
-   code:roomCode,
-
-   host_name:myName,
-
-   video_url:"",
-
-   is_playing:false
-
-  })
-  .select()
-  .single();
+ setHome(
+  "Подключаемся к Supabase..."
+ );
 
 
- if(error){
+ try{
+
+  /*
+   Проверяем таблицу
+  */
+
+  const check=
+   await supabaseClient
+    .from("rooms")
+    .select("id")
+    .limit(1);
+
+
+  if(check.error){
+
+   throw new Error(
+    check.error.message
+   );
+
+  }
+
+
+  setHome(
+   "Создаём комнату..."
+  );
+
+
+  const roomCode=makeCode();
+
+
+  const result=
+   await supabaseClient
+    .from("rooms")
+    .insert({
+
+     code:roomCode,
+
+     host_name:name,
+
+     video_url:"",
+
+     is_playing:false
+
+    })
+    .select()
+    .single();
+
+
+  if(result.error){
+
+   throw new Error(
+    result.error.message
+   );
+
+  }
+
+
+  currentRoom=result.data;
+
+
+  const userResult=
+   await supabaseClient
+    .from("room_users")
+    .insert({
+
+     room_id:currentRoom.id,
+
+     user_name:name
+
+    });
+
+
+  if(userResult.error){
+
+   throw new Error(
+    "Комната создана, но участник не добавился: "+
+    userResult.error.message
+   );
+
+  }
+
+
+  openRoom();
+
+
+ }catch(error){
 
   console.error(error);
 
-  $("homeStatus").textContent=
-   "Ошибка: "+error.message;
+  setHome(
+   "❌ "+error.message,
+   "error"
+  );
 
-  return;
  }
-
-
- room=data;
-
- await addUser();
-
- openRoom();
 
 }
 
 
-/* ================================
+/* =========================================
    JOIN
-================================ */
+========================================= */
 
-function openJoin(){
+$("joinBtn").onclick=()=>{
 
- show("joinModal");
+ $("joinModal")
+  .classList.remove("hidden");
 
  $("joinCode").focus();
 
-}
-
-function closeJoin(){
-
- hide("joinModal");
-
-}
-
-async function joinRoom(){
-
- myName=getName();
-
- if(!myName)return;
+};
 
 
- const roomCode=
-  $("joinCode")
-   .value
-   .trim()
-   .toUpperCase();
+$("closeJoin").onclick=()=>{
+
+ $("joinModal")
+  .classList.add("hidden");
+
+};
 
 
- if(roomCode.length!==6){
+$("confirmJoin").onclick=
+ async()=>{
 
-  $("joinStatus").textContent=
-   "Введите 6 символов";
+  const name=getName();
 
-  return;
- }
+  if(!name)return;
 
-
- $("joinStatus").textContent=
- "Ищем комнату...";
+  currentName=name;
 
 
- const {data,error}=await db
-  .from("rooms")
-  .select("*")
-  .eq("code",roomCode)
-  .maybeSingle();
+  const code=
+   $("joinCode")
+    .value
+    .trim()
+    .toUpperCase();
 
 
- if(error){
+  if(code.length!==6){
 
-  $("joinStatus").textContent=
-   error.message;
+   setJoin(
+    "Код должен содержать 6 символов",
+    "error"
+   );
 
-  return;
- }
+   return;
 
-
- if(!data){
-
-  $("joinStatus").textContent=
-   "Комната не найдена";
-
-  return;
- }
+  }
 
 
- room=data;
-
- await addUser();
-
- closeJoin();
-
- openRoom();
-
-}
+  setJoin(
+   "Ищем комнату..."
+  );
 
 
-/* ================================
+  try{
+
+   const result=
+    await supabaseClient
+     .from("rooms")
+     .select("*")
+     .eq("code",code)
+     .maybeSingle();
+
+
+   if(result.error){
+
+    throw new Error(
+     result.error.message
+    );
+
+   }
+
+
+   if(!result.data){
+
+    setJoin(
+     "❌ Такая комната не найдена",
+     "error"
+    );
+
+    return;
+
+   }
+
+
+   currentRoom=result.data;
+
+
+   const userResult=
+    await supabaseClient
+     .from("room_users")
+     .insert({
+
+      room_id:currentRoom.id,
+
+      user_name:name
+
+     });
+
+
+   if(userResult.error){
+
+    throw new Error(
+     userResult.error.message
+    );
+
+   }
+
+
+   $("joinModal")
+    .classList.add("hidden");
+
+
+   openRoom();
+
+
+  }catch(error){
+
+   console.error(error);
+
+   setJoin(
+    "❌ "+error.message,
+    "error"
+   );
+
+  }
+
+};
+
+
+/* =========================================
    OPEN ROOM
-================================ */
+========================================= */
 
 async function openRoom(){
 
- hide("home");
+ $("home")
+  .classList.add("hidden");
 
- show("room");
+ $("room")
+  .classList.remove("hidden");
 
 
  $("roomCode").textContent=
-  room.code;
+  currentRoom.code;
 
 
  $("videoUrl").value=
-  room.video_url || "";
+  currentRoom.video_url || "";
 
 
  renderVideo(
-  room.video_url
+  currentRoom.video_url
  );
 
 
@@ -848,27 +977,28 @@ async function openRoom(){
 
  await loadMessages();
 
- subscribeRealtime();
+ subscribe();
 
 }
 
 
-/* ================================
-   VK VIDEO
-================================ */
+/* =========================================
+   VIDEO
+========================================= */
 
 function renderVideo(value){
 
  if(!value){
 
-  $("videoBox").innerHTML=`
+  $("video").innerHTML=`
    <div>
     🎬<br><br>
-    Здесь появится видео VK
+    Добавьте видео VK
    </div>
   `;
 
   return;
+
  }
 
 
@@ -876,7 +1006,7 @@ function renderVideo(value){
 
 
  /*
-   Можно вставить iframe VK.
+  Поддержка полного iframe VK
  */
 
  if(src.includes("<iframe")){
@@ -900,13 +1030,14 @@ function renderVideo(value){
   !src.startsWith("https://")
  ){
 
-  $("videoBox").innerHTML=`
+  $("video").innerHTML=`
    <div>
     ⚠️ Неверная ссылка
    </div>
   `;
 
   return;
+
  }
 
 
@@ -917,229 +1048,246 @@ function renderVideo(value){
  iframe.src=src;
 
  iframe.allow=
-  "autoplay; encrypted-media; fullscreen; picture-in-picture";
+  "autoplay; fullscreen; encrypted-media; picture-in-picture";
 
  iframe.allowFullscreen=true;
 
 
- $("videoBox").innerHTML="";
+ $("video").innerHTML="";
 
- $("videoBox").appendChild(
+ $("video").appendChild(
   iframe
  );
 
 }
 
 
-/* ================================
-   SET VIDEO
-================================ */
+$("videoBtn").onclick=
+ async()=>{
 
-async function setVideo(){
-
- const value=
-  $("videoUrl").value.trim();
+  if(!currentRoom)return;
 
 
- if(!value){
-
-  alert("Вставь видео VK");
-
-  return;
- }
+  const value=
+   $("videoUrl")
+    .value
+    .trim();
 
 
- const {data,error}=await db
-  .from("rooms")
-  .update({
+  if(!value){
 
-   video_url:value,
+   setRoom(
+    "Вставь видео VK",
+    "error"
+   );
 
-   is_playing:false
+   return;
 
-  })
-  .eq("id",room.id)
-  .select()
-  .single();
+  }
 
 
- if(error){
+  const result=
+   await supabaseClient
+    .from("rooms")
+    .update({
 
-  console.error(error);
+     video_url:value,
 
-  status("Ошибка сохранения");
+     is_playing:false
 
-  return;
- }
-
-
- room=data;
-
- renderVideo(value);
-
- status("🎬 Видео добавлено");
-
-}
+    })
+    .eq("id",currentRoom.id)
+    .select()
+    .single();
 
 
-/* ================================
+  if(result.error){
+
+   setRoom(
+    "❌ "+result.error.message,
+    "error"
+   );
+
+   return;
+
+  }
+
+
+  currentRoom=result.data;
+
+  renderVideo(value);
+
+  setRoom(
+   "🎬 Видео добавлено",
+   "success"
+  );
+
+};
+
+
+/* =========================================
    PLAY / PAUSE
-================================ */
+========================================= */
 
-async function playVideo(){
+$("playBtn").onclick=
+ async()=>{
 
- const {data,error}=await db
-  .from("rooms")
-  .update({
-   is_playing:true
-  })
-  .eq("id",room.id)
-  .select()
-  .single();
+  if(!currentRoom)return;
 
 
- if(error){
-
-  console.error(error);
-
-  status("Ошибка");
-
-  return;
- }
-
- room=data;
-
- status("▶️ Смотрим вместе");
-
-}
+  const result=
+   await supabaseClient
+    .from("rooms")
+    .update({
+     is_playing:true
+    })
+    .eq("id",currentRoom.id)
+    .select()
+    .single();
 
 
-async function pauseVideo(){
+  if(result.error){
 
- const {data,error}=await db
-  .from("rooms")
-  .update({
-   is_playing:false
-  })
-  .eq("id",room.id)
-  .select()
-  .single();
+   setRoom(
+    "❌ "+result.error.message,
+    "error"
+   );
 
+   return;
 
- if(error){
-
-  console.error(error);
-
-  status("Ошибка");
-
-  return;
- }
-
- room=data;
-
- status("⏸ Пауза");
-
-}
+  }
 
 
-/* ================================
+  currentRoom=result.data;
+
+  setRoom(
+   "▶️ Смотрим вместе",
+   "success"
+  );
+
+};
+
+
+$("pauseBtn").onclick=
+ async()=>{
+
+  if(!currentRoom)return;
+
+
+  const result=
+   await supabaseClient
+    .from("rooms")
+    .update({
+     is_playing:false
+    })
+    .eq("id",currentRoom.id)
+    .select()
+    .single();
+
+
+  if(result.error){
+
+   setRoom(
+    "❌ "+result.error.message,
+    "error"
+   );
+
+   return;
+
+  }
+
+
+  currentRoom=result.data;
+
+  setRoom(
+   "⏸ Пауза",
+   "success"
+  );
+
+};
+
+
+/* =========================================
    USERS
-================================ */
-
-async function addUser(){
-
- await db
-  .from("room_users")
-  .delete()
-  .eq("room_id",room.id)
-  .eq("user_name",myName);
-
-
- const {error}=await db
-  .from("room_users")
-  .insert({
-
-   room_id:room.id,
-
-   user_name:myName
-
-  });
-
-
- if(error)
-  console.error(error);
-
-}
-
+========================================= */
 
 async function loadUsers(){
 
- const {data,error}=await db
-  .from("room_users")
-  .select("*")
-  .eq("room_id",room.id)
-  .order("created_at");
+ const result=
+  await supabaseClient
+   .from("room_users")
+   .select("*")
+   .eq("room_id",currentRoom.id)
+   .order("created_at");
 
 
- if(error){
+ if(result.error){
 
-  console.error(error);
+  console.error(
+   result.error
+  );
 
   return;
+
  }
 
 
  $("users").innerHTML="";
 
 
- (data||[]).forEach(user=>{
+ (result.data||[])
+  .forEach(user=>{
 
-  const div=
-   document.createElement("div");
+   const div=
+    document.createElement("div");
 
-  div.className="user";
+   div.className="user";
 
-  div.textContent=
-   "🟢 "+user.user_name;
+   div.textContent=
+    "🟢 "+user.user_name;
 
-  $("users").appendChild(div);
+   $("users")
+    .appendChild(div);
 
- });
+  });
 
 }
 
 
-/* ================================
+/* =========================================
    CHAT
-================================ */
+========================================= */
 
 async function loadMessages(){
 
- const {data,error}=await db
-  .from("messages")
-  .select("*")
-  .eq("room_id",room.id)
-  .order("created_at")
-  .limit(100);
+ const result=
+  await supabaseClient
+   .from("messages")
+   .select("*")
+   .eq("room_id",currentRoom.id)
+   .order("created_at")
+   .limit(100);
 
 
- if(error){
+ if(result.error){
 
-  console.error(error);
+  console.error(
+   result.error
+  );
 
   return;
+
  }
 
 
  $("messages").innerHTML="";
 
 
- (data||[]).forEach(
-  renderMessage
- );
+ (result.data||[])
+  .forEach(renderMessage);
 
 
- scrollChat();
+ scrollMessages();
 
 }
 
@@ -1149,36 +1297,54 @@ function renderMessage(item){
  const div=
   document.createElement("div");
 
- div.className="message";
+ div.className="msg";
 
 
- const b=
-  document.createElement("b");
+ const name=
+  document.createElement("div");
 
- b.textContent=
+ name.className="msgName";
+
+ name.textContent=
   item.user_name;
 
 
  const text=
-  document.createElement("span");
+  document.createElement("div");
 
  text.textContent=
   item.message;
 
 
- div.appendChild(b);
+ div.appendChild(name);
 
  div.appendChild(text);
 
- $("messages").appendChild(div);
+
+ $("messages")
+  .appendChild(div);
 
 
- scrollChat();
+ scrollMessages();
+
+}
+
+
+function scrollMessages(){
+
+ const box=
+  $("messages");
+
+ box.scrollTop=
+  box.scrollHeight;
 
 }
 
 
 async function sendMessage(){
+
+ if(!currentRoom)return;
+
 
  const input=
   $("message");
@@ -1193,226 +1359,228 @@ async function sendMessage(){
  input.value="";
 
 
- const {error}=await db
-  .from("messages")
-  .insert({
+ const result=
+  await supabaseClient
+   .from("messages")
+   .insert({
 
-   room_id:room.id,
+    room_id:currentRoom.id,
 
-   user_name:myName,
+    user_name:currentName,
 
-   message:text
+    message:text
 
-  });
+   });
 
 
- if(error){
+ if(result.error){
 
-  console.error(error);
-
-  status("Ошибка отправки");
+  setRoom(
+   "❌ "+result.error.message,
+   "error"
+  );
 
  }
 
 }
 
 
-function scrollChat(){
+$("sendBtn").onclick=
+ sendMessage;
 
- const box=
-  $("messages");
-
- box.scrollTop=
-  box.scrollHeight;
-
-}
-
-
-/* ================================
-   REALTIME
-================================ */
-
-function subscribeRealtime(){
-
- roomChannel=
-  db.channel(
-   "room-"+room.id
-  );
-
-
- roomChannel.on(
-
-  "postgres_changes",
-
-  {
-   event:"UPDATE",
-   schema:"public",
-   table:"rooms",
-   filter:"id=eq."+room.id
-  },
-
-  payload=>{
-
-   const old=room;
-
-   room=payload.new;
-
-
-   if(
-    old.video_url !==
-    room.video_url
-   ){
-
-    $("videoUrl").value=
-     room.video_url || "";
-
-    renderVideo(
-     room.video_url
-    );
-
-    status("🎬 Видео изменилось");
-
-   }
-
-
-   if(
-    old.is_playing !==
-    room.is_playing
-   ){
-
-    status(
-     room.is_playing
-      ? "▶️ Видео запущено"
-      : "⏸ Видео остановлено"
-    );
-
-   }
-
-  }
-
- );
-
-
- roomChannel.subscribe();
-
-
- userChannel=
-  db.channel(
-   "users-"+room.id
-  );
-
-
- userChannel.on(
-
-  "postgres_changes",
-
-  {
-   event:"*",
-   schema:"public",
-   table:"room_users",
-   filter:"room_id=eq."+room.id
-  },
-
-  ()=>{
-   loadUsers();
-  }
-
- );
-
-
- userChannel.subscribe();
-
-
- messageChannel=
-  db.channel(
-   "messages-"+room.id
-  );
-
-
- messageChannel.on(
-
-  "postgres_changes",
-
-  {
-   event:"INSERT",
-   schema:"public",
-   table:"messages",
-   filter:"room_id=eq."+room.id
-  },
-
-  payload=>{
-
-   renderMessage(
-    payload.new
-   );
-
-  }
-
- );
-
-
- messageChannel.subscribe();
-
-}
-
-
-/* ================================
-   LEAVE
-================================ */
-
-async function leaveRoom(){
-
- if(!room)return;
-
-
- await db
-  .from("room_users")
-  .delete()
-  .eq("room_id",room.id)
-  .eq("user_name",myName);
-
-
- if(roomChannel)
-  await db.removeChannel(
-   roomChannel
-  );
-
-
- if(userChannel)
-  await db.removeChannel(
-   userChannel
-  );
-
-
- if(messageChannel)
-  await db.removeChannel(
-   messageChannel
-  );
-
-
- room=null;
-
-
- hide("room");
-
- show("home");
-
-
- $("users").innerHTML="";
- $("messages").innerHTML="";
-
-}
-
-
-/* ================================
-   ENTER
-================================ */
 
 $("message").addEventListener(
  "keydown",
  e=>{
+
   if(e.key==="Enter")
    sendMessage();
+
+ }
+);
+
+
+/* =========================================
+   REALTIME
+========================================= */
+
+function subscribe(){
+
+ roomChannel=
+  supabaseClient
+   .channel(
+    "room-"+currentRoom.id
+   )
+   .on(
+    "postgres_changes",
+    {
+     event:"UPDATE",
+     schema:"public",
+     table:"rooms",
+     filter:
+      "id=eq."+currentRoom.id
+    },
+    payload=>{
+
+     const old=
+      currentRoom;
+
+     currentRoom=
+      payload.new;
+
+
+     if(
+      old.video_url !==
+      currentRoom.video_url
+     ){
+
+      $("videoUrl").value=
+       currentRoom.video_url || "";
+
+      renderVideo(
+       currentRoom.video_url
+      );
+
+     }
+
+
+     if(
+      old.is_playing !==
+      currentRoom.is_playing
+     ){
+
+      setRoom(
+       currentRoom.is_playing
+        ? "▶️ Видео запущено"
+        : "⏸ Видео на паузе"
+      );
+
+     }
+
+    }
+   )
+   .subscribe();
+
+
+ usersChannel=
+  supabaseClient
+   .channel(
+    "users-"+currentRoom.id
+   )
+   .on(
+    "postgres_changes",
+    {
+     event:"*",
+     schema:"public",
+     table:"room_users",
+     filter:
+      "room_id=eq."+currentRoom.id
+    },
+    ()=>{
+     loadUsers();
+    }
+   )
+   .subscribe();
+
+
+ messagesChannel=
+  supabaseClient
+   .channel(
+    "messages-"+currentRoom.id
+   )
+   .on(
+    "postgres_changes",
+    {
+     event:"INSERT",
+     schema:"public",
+     table:"messages",
+     filter:
+      "room_id=eq."+currentRoom.id
+    },
+    payload=>{
+     renderMessage(
+      payload.new
+     );
+    }
+   )
+   .subscribe();
+
+}
+
+
+/* =========================================
+   LEAVE
+========================================= */
+
+$("leaveBtn").onclick=
+ async()=>{
+
+  if(!currentRoom)return;
+
+
+  await supabaseClient
+   .from("room_users")
+   .delete()
+   .eq(
+    "room_id",
+    currentRoom.id
+   )
+   .eq(
+    "user_name",
+    currentName
+   );
+
+
+  if(roomChannel)
+   await supabaseClient
+    .removeChannel(
+     roomChannel
+    );
+
+
+  if(usersChannel)
+   await supabaseClient
+    .removeChannel(
+     usersChannel
+    );
+
+
+  if(messagesChannel)
+   await supabaseClient
+    .removeChannel(
+     messagesChannel
+    );
+
+
+  currentRoom=null;
+
+
+  $("room")
+   .classList.add("hidden");
+
+  $("home")
+   .classList.remove("hidden");
+
+
+  setHome(
+   "Ты вышел из комнаты",
+   "success"
+  );
+
+};
+
+
+/* =========================================
+   ENTER KEYS
+========================================= */
+
+$("name").addEventListener(
+ "keydown",
+ e=>{
+
+  if(e.key==="Enter")
+   createRoom();
+
  }
 );
 
@@ -1420,34 +1588,9 @@ $("message").addEventListener(
 $("joinCode").addEventListener(
  "keydown",
  e=>{
+
   if(e.key==="Enter")
-   joinRoom();
- }
-);
-
-
-/* ================================
-   AUTO ROOM FROM URL
-================================ */
-
-window.addEventListener(
- "load",
- ()=>{
-
-  const params=
-   new URLSearchParams(
-    location.search
-   );
-
-  const code=
-   params.get("room");
-
-  if(code){
-
-   $("joinCode").value=
-    code.toUpperCase();
-
-  }
+   $("confirmJoin").click();
 
  }
 );
