@@ -9,36 +9,50 @@
 
 <style>
 *{box-sizing:border-box}
+
 body{
  margin:0;
+ min-height:100vh;
  background:#090a0f;
  color:#fff;
- font-family:Arial,sans-serif;
+ font-family:Arial,Helvetica,sans-serif
 }
+
 button,input{
- font:inherit;
+ font:inherit
 }
+
 button{
  border:0;
- cursor:pointer;
+ cursor:pointer
 }
+
 .app{
- max-width:900px;
+ width:100%;
+ max-width:950px;
  margin:auto;
- padding:18px;
+ padding:15px
 }
+
 .hidden{display:none!important}
 
-.logo{
- text-align:center;
- font-size:28px;
- font-weight:900;
- margin:35px 0 5px;
+/* HOME */
+
+.home{
+ max-width:430px;
+ margin:70px auto 0;
+ text-align:center
 }
+
+.logo{
+ font-size:31px;
+ font-weight:900;
+ margin-bottom:7px
+}
+
 .subtitle{
- text-align:center;
- color:#8f94a3;
- margin-bottom:25px;
+ color:#9298a6;
+ margin-bottom:25px
 }
 
 .card{
@@ -46,199 +60,234 @@ button{
  border:1px solid #252936;
  border-radius:18px;
  padding:18px;
+ text-align:left
 }
-.home{
- max-width:430px;
- margin:auto;
-}
+
 label{
  display:block;
- color:#8f94a3;
+ color:#9298a6;
  font-size:13px;
- margin:10px 0 6px;
+ margin:0 0 7px
 }
+
 input{
  width:100%;
- padding:14px;
  background:#090b10;
  border:1px solid #303442;
- color:#fff;
  border-radius:11px;
- outline:none;
+ color:#fff;
+ padding:14px;
+ outline:none
 }
+
 input:focus{
- border-color:#777cff;
+ border-color:#777cff
 }
 
 .btn{
  width:100%;
  padding:14px;
- border-radius:11px;
- font-weight:800;
  margin-top:9px;
+ border-radius:11px;
+ font-weight:800
 }
+
 .primary{
  background:#fff;
- color:#08090d;
+ color:#08090c
 }
+
 .secondary{
  background:#1b1e27;
  color:#fff;
- border:1px solid #303442;
+ border:1px solid #303442
 }
 
-.roomTop{
+.status{
+ color:#7e8696;
+ text-align:center;
+ font-size:12px;
+ min-height:18px;
+ margin-top:12px
+}
+
+/* ROOM */
+
+.roomHead{
  display:flex;
  align-items:center;
  justify-content:space-between;
  gap:10px;
- margin-bottom:14px;
+ margin:10px 0 14px
 }
+
 .roomTitle{
  font-size:21px;
- font-weight:900;
+ font-weight:900
 }
+
 .roomCode{
- color:#8f94a3;
+ color:#858c9b;
  font-size:12px;
- margin-top:3px;
+ margin-top:4px
 }
+
+.roomCode b{
+ color:#fff;
+ letter-spacing:2px
+}
+
 .leave{
  background:#29171a;
- color:#ff9ba1;
- padding:9px 12px;
- border-radius:9px;
+ color:#ff9da4;
+ padding:10px 13px;
+ border-radius:10px
 }
 
-.grid{
+.layout{
  display:grid;
- grid-template-columns:1fr 300px;
- gap:14px;
+ grid-template-columns:minmax(0,1fr) 300px;
+ gap:14px
 }
 
-.video{
- background:#000;
- border-radius:15px;
- overflow:hidden;
+/* VIDEO */
+
+.videoBox{
+ width:100%;
  aspect-ratio:16/9;
+ background:#000;
+ border-radius:16px;
+ overflow:hidden;
  display:flex;
  align-items:center;
  justify-content:center;
- color:#747b89;
- text-align:center;
-}
-.video iframe{
- width:100%;
- height:100%;
- border:0;
+ color:#727987;
+ text-align:center
 }
 
-.videoInput{
- margin-top:10px;
+.videoBox iframe{
+ width:100%;
+ height:100%;
+ border:0
+}
+
+.videoAdd{
  display:flex;
  gap:7px;
+ margin-top:9px
 }
-.videoInput input{
- margin:0;
+
+.videoAdd input{
+ margin:0
 }
-.videoInput button{
- padding:0 15px;
- border-radius:10px;
+
+.videoAdd button{
  background:#fff;
  color:#000;
- font-weight:800;
+ padding:0 15px;
+ border-radius:10px;
+ font-weight:800
 }
 
 .controls{
  display:flex;
  gap:8px;
- margin-top:9px;
+ margin-top:9px
 }
+
 .controls button{
  flex:1;
- padding:12px;
- border-radius:10px;
- background:#1a1d26;
+ background:#191d26;
  color:#fff;
+ border-radius:10px;
+ padding:12px
 }
+
+/* PANELS */
 
 .panel{
  display:flex;
  flex-direction:column;
- gap:12px;
+ gap:12px
 }
 
 .panelBox{
  background:#11131a;
  border:1px solid #252936;
  border-radius:15px;
- padding:14px;
+ padding:14px
 }
 
-.title{
+.panelTitle{
  font-weight:900;
- margin-bottom:10px;
+ margin-bottom:10px
 }
+
+/* USERS */
 
 .users{
  display:flex;
  flex-wrap:wrap;
- gap:6px;
+ gap:6px
 }
+
 .user{
  background:#1b1f28;
  padding:7px 10px;
  border-radius:20px;
- font-size:13px;
+ font-size:13px
 }
 
+/* CHAT */
+
 .chat{
- height:320px;
+ height:350px;
  display:flex;
- flex-direction:column;
+ flex-direction:column
 }
+
 .messages{
  flex:1;
  overflow:auto;
  display:flex;
  flex-direction:column;
- gap:7px;
+ gap:7px
 }
+
 .message{
  background:#1a1e27;
  padding:8px 10px;
  border-radius:9px;
  font-size:13px;
+ word-break:break-word
 }
+
 .message b{
  display:block;
  font-size:11px;
  color:#9299aa;
- margin-bottom:3px;
+ margin-bottom:3px
 }
+
 .chatSend{
  display:flex;
  gap:6px;
- margin-top:8px;
+ margin-top:8px
 }
+
 .chatSend input{
- margin:0;
+ margin:0
 }
+
 .chatSend button{
- width:44px;
+ width:45px;
  border-radius:9px;
  background:#fff;
  color:#000;
- font-weight:900;
+ font-weight:900
 }
 
-.status{
- text-align:center;
- color:#777f90;
- font-size:12px;
- min-height:18px;
- margin-top:10px;
-}
+/* MODAL */
 
 .modal{
  position:fixed;
@@ -247,43 +296,70 @@ input:focus{
  display:flex;
  align-items:center;
  justify-content:center;
- padding:20px;
- z-index:10;
+ padding:18px;
+ z-index:20
 }
+
 .modalBox{
  width:100%;
  max-width:400px;
  background:#11131a;
  border:1px solid #292e3a;
  border-radius:18px;
- padding:18px;
+ padding:18px
 }
+
+.modalBox h2{
+ margin-top:0
+}
+
 .close{
  float:right;
  background:none;
  color:#888;
- font-size:25px;
+ font-size:26px
 }
+
+/* MOBILE */
 
 @media(max-width:750px){
- .grid{
-  grid-template-columns:1fr;
+
+ .layout{
+  grid-template-columns:1fr
  }
- .panel{
-  display:flex;
+
+ .home{
+  margin-top:45px
  }
+
+ .chat{
+  height:300px
+ }
+
 }
 
-@media(max-width:500px){
+@media(max-width:450px){
+
  .app{
-  padding:11px;
+  padding:10px
  }
+
  .logo{
-  margin-top:22px;
+  font-size:27px
  }
+
  .roomTitle{
-  font-size:18px;
+  font-size:18px
  }
+
+ .roomHead{
+  align-items:flex-start
+ }
+
+ .videoAdd input{
+  min-width:0
+ }
+
 }
 </style>
 </head>
@@ -292,68 +368,104 @@ input:focus{
 
 <div class="app">
 
-<!-- ГЛАВНЫЙ ЭКРАН -->
 <section id="home">
 
- <div class="logo">Томас ❤️ Яна</div>
- <div class="subtitle">Смотрим вместе</div>
+ <div class="home">
 
- <div class="card home">
+  <div class="logo">
+   Томас ❤️ Яна
+  </div>
 
-  <label>Твоё имя</label>
-  <input id="name" maxlength="20" placeholder="Томас или Яна">
+  <div class="subtitle">
+   Смотрим вместе
+  </div>
 
-  <button class="btn primary" onclick="createRoom()">
-   ❤️ СОЗДАТЬ КОМНАТУ
-  </button>
+  <div class="card">
 
-  <button class="btn secondary" onclick="openJoin()">
-   🔑 ВОЙТИ В КОМНАТУ
-  </button>
+   <label>Твоё имя</label>
 
-  <div id="homeStatus" class="status"></div>
+   <input
+    id="name"
+    maxlength="20"
+    placeholder="Томас или Яна"
+   >
+
+   <button
+    class="btn primary"
+    onclick="createRoom()"
+   >
+    ❤️ Создать комнату
+   </button>
+
+   <button
+    class="btn secondary"
+    onclick="openJoin()"
+   >
+    🔑 Войти по коду
+   </button>
+
+   <div
+    id="homeStatus"
+    class="status"
+   ></div>
+
+  </div>
 
  </div>
 
 </section>
 
 
-<!-- КОМНАТА -->
-<section id="room" class="hidden">
+<section
+ id="room"
+ class="hidden"
+>
 
- <div class="roomTop">
+ <div class="roomHead">
 
   <div>
-   <div class="roomTitle">❤️ Томас + Яна</div>
-   <div class="roomCode">
-    Код комнаты: <b id="roomCode"></b>
+
+   <div class="roomTitle">
+    Томас ❤️ Яна
    </div>
+
+   <div class="roomCode">
+    Комната:
+    <b id="roomCode"></b>
+   </div>
+
   </div>
 
-  <button class="leave" onclick="leaveRoom()">
+  <button
+   class="leave"
+   onclick="leaveRoom()"
+  >
    Выйти
   </button>
 
  </div>
 
 
- <div class="grid">
+ <div class="layout">
 
-  <!-- ВИДЕО -->
   <main>
 
-   <div class="video" id="video">
+   <div
+    id="videoBox"
+    class="videoBox"
+   >
     <div>
      🎬<br><br>
-     Добавьте видео VK
+     Здесь появится видео VK
     </div>
    </div>
 
-   <div class="videoInput">
+
+   <div class="videoAdd">
 
     <input
      id="videoUrl"
-     placeholder="Вставь ссылку VK или iframe-код"
+     placeholder="Вставь ссылку или iframe VK"
     >
 
     <button onclick="setVideo()">
@@ -362,44 +474,54 @@ input:focus{
 
    </div>
 
+
    <div class="controls">
 
-    <button onclick="syncPlay()">
-     ▶️
+    <button onclick="playVideo()">
+     ▶️ Смотреть
     </button>
 
-    <button onclick="syncPause()">
-     ⏸
+    <button onclick="pauseVideo()">
+     ⏸ Пауза
     </button>
 
    </div>
 
-   <div id="status" class="status"></div>
+
+   <div
+    id="roomStatus"
+    class="status"
+   ></div>
 
   </main>
 
 
-  <!-- БОКОВАЯ ПАНЕЛЬ -->
   <aside class="panel">
 
    <div class="panelBox">
 
-    <div class="title">
-     👥 Сейчас смотрят
+    <div class="panelTitle">
+     👥 В комнате
     </div>
 
-    <div id="users" class="users"></div>
+    <div
+     id="users"
+     class="users"
+    ></div>
 
    </div>
 
 
    <div class="panelBox chat">
 
-    <div class="title">
+    <div class="panelTitle">
      💬 Чат
     </div>
 
-    <div id="messages" class="messages"></div>
+    <div
+     id="messages"
+     class="messages"
+    ></div>
 
     <div class="chatSend">
 
@@ -426,12 +548,19 @@ input:focus{
 </div>
 
 
-<!-- ВХОД ПО КОДУ -->
-<div id="joinModal" class="modal hidden">
+<div
+ id="joinModal"
+ class="modal hidden"
+>
 
  <div class="modalBox">
 
-  <button class="close" onclick="closeJoin()">×</button>
+  <button
+   class="close"
+   onclick="closeJoin()"
+  >
+   ×
+  </button>
 
   <h2>Войти в комнату</h2>
 
@@ -444,11 +573,17 @@ input:focus{
    style="text-transform:uppercase"
   >
 
-  <button class="btn primary" onclick="joinRoom()">
-   ВОЙТИ
+  <button
+   class="btn primary"
+   onclick="joinRoom()"
+  >
+   Войти
   </button>
 
-  <div id="joinStatus" class="status"></div>
+  <div
+   id="joinStatus"
+   class="status"
+  ></div>
 
  </div>
 
@@ -457,33 +592,38 @@ input:focus{
 
 <script>
 
-/* =====================================================
+/* ================================
    SUPABASE
-   ===================================================== */
+================================ */
 
-const SUPABASE_URL = "ВСТАВЬ_SUPABASE_URL";
-const SUPABASE_KEY = "ВСТАВЬ_SUPABASE_ANON_KEY";
+const SUPABASE_URL =
+"https://qyjvkiusyiylckaujjiv.supabase.co";
 
-const db = window.supabase.createClient(
+const SUPABASE_KEY =
+"sb_publishable_dwxrSiVkIY5C8PKu--_UlA_phF5hvRy";
+
+const db =
+window.supabase.createClient(
  SUPABASE_URL,
  SUPABASE_KEY
 );
 
 
-/* =====================================================
-   ПЕРЕМЕННЫЕ
-   ===================================================== */
+/* ================================
+   STATE
+================================ */
 
-let room = null;
-let myName = "";
-let roomChannel = null;
-let userChannel = null;
-let messageChannel = null;
+let room=null;
+let myName="";
+
+let roomChannel=null;
+let userChannel=null;
+let messageChannel=null;
 
 
-/* =====================================================
+/* ================================
    HELPERS
-   ===================================================== */
+================================ */
 
 function $(id){
  return document.getElementById(id);
@@ -497,48 +637,57 @@ function hide(id){
  $(id).classList.add("hidden");
 }
 
-function randomCode(){
+function generateCode(){
 
- const chars =
+ const chars=
  "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
- let code="";
+ let result="";
 
  for(let i=0;i<6;i++){
-  code += chars[
-   Math.floor(Math.random()*chars.length)
+
+  result+=chars[
+   Math.floor(
+    Math.random()*chars.length
+   )
   ];
+
  }
 
- return code;
+ return result;
 }
 
 function getName(){
 
- const name=$("name").value.trim();
+ const value=
+  $("name").value.trim();
 
- if(!name){
-  alert("Напиши своё имя");
+ if(!value){
+
+  alert("Введите имя");
+
   return null;
  }
 
- return name.substring(0,20);
+ return value.substring(0,20);
 }
 
-function notify(text){
+function status(text){
 
- $("status").textContent=text;
+ $("roomStatus").textContent=text;
 
  setTimeout(()=>{
-  $("status").textContent="";
+
+  $("roomStatus").textContent="";
+
  },2500);
 
 }
 
 
-/* =====================================================
-   СОЗДАНИЕ КОМНАТЫ
-   ===================================================== */
+/* ================================
+   CREATE ROOM
+================================ */
 
 async function createRoom(){
 
@@ -546,20 +695,29 @@ async function createRoom(){
 
  if(!myName)return;
 
- $("homeStatus").textContent="Создаём комнату...";
+ $("homeStatus").textContent=
+ "Создаём комнату...";
 
- const code=randomCode();
+
+ let roomCode=generateCode();
+
 
  const {data,error}=await db
   .from("rooms")
   .insert({
-   code:code,
+
+   code:roomCode,
+
    host_name:myName,
+
    video_url:"",
+
    is_playing:false
+
   })
   .select()
   .single();
+
 
  if(error){
 
@@ -571,6 +729,7 @@ async function createRoom(){
   return;
  }
 
+
  room=data;
 
  await addUser();
@@ -580,17 +739,22 @@ async function createRoom(){
 }
 
 
-/* =====================================================
-   ВХОД
-   ===================================================== */
+/* ================================
+   JOIN
+================================ */
 
 function openJoin(){
+
  show("joinModal");
+
  $("joinCode").focus();
+
 }
 
 function closeJoin(){
+
  hide("joinModal");
+
 }
 
 async function joinRoom(){
@@ -599,27 +763,33 @@ async function joinRoom(){
 
  if(!myName)return;
 
- const code=$("joinCode")
-  .value
-  .trim()
-  .toUpperCase();
 
- if(code.length!==6){
+ const roomCode=
+  $("joinCode")
+   .value
+   .trim()
+   .toUpperCase();
+
+
+ if(roomCode.length!==6){
 
   $("joinStatus").textContent=
-   "Код должен быть из 6 символов";
+   "Введите 6 символов";
 
   return;
  }
 
+
  $("joinStatus").textContent=
-  "Ищем комнату...";
+ "Ищем комнату...";
+
 
  const {data,error}=await db
   .from("rooms")
   .select("*")
-  .eq("code",code)
+  .eq("code",roomCode)
   .maybeSingle();
+
 
  if(error){
 
@@ -629,13 +799,15 @@ async function joinRoom(){
   return;
  }
 
+
  if(!data){
 
   $("joinStatus").textContent=
-   "Такой комнаты нет";
+   "Комната не найдена";
 
   return;
  }
+
 
  room=data;
 
@@ -648,84 +820,89 @@ async function joinRoom(){
 }
 
 
-/* =====================================================
-   ОТКРЫТЬ КОМНАТУ
-   ===================================================== */
+/* ================================
+   OPEN ROOM
+================================ */
 
 async function openRoom(){
 
  hide("home");
+
  show("room");
+
 
  $("roomCode").textContent=
   room.code;
 
+
  $("videoUrl").value=
   room.video_url || "";
 
- renderVideo(room.video_url);
+
+ renderVideo(
+  room.video_url
+ );
+
 
  await loadUsers();
+
  await loadMessages();
 
- subscribe();
+ subscribeRealtime();
 
 }
 
 
-/* =====================================================
+/* ================================
    VK VIDEO
-   ===================================================== */
+================================ */
 
 function renderVideo(value){
 
  if(!value){
 
-  $("video").innerHTML=`
+  $("videoBox").innerHTML=`
    <div>
     🎬<br><br>
-    Добавьте видео VK
+    Здесь появится видео VK
    </div>
   `;
 
   return;
  }
+
+
+ let src=value.trim();
 
 
  /*
-   Если вставлен iframe-код VK,
-   извлекаем src.
+   Можно вставить iframe VK.
  */
 
- let src="";
+ if(src.includes("<iframe")){
 
- if(value.includes("<iframe")){
-
-  const match=value.match(
-   /src=["']([^"']+)["']/
-  );
+  const match=
+   src.match(
+    /src=["']([^"']+)["']/
+   );
 
   if(match){
+
    src=match[1];
+
   }
 
- }else{
-
-  /*
-    Если это уже ссылка на iframe,
-    используем её напрямую.
-  */
-
-  src=value;
  }
 
 
- if(!src){
+ if(
+  !src.startsWith("http://") &&
+  !src.startsWith("https://")
+ ){
 
-  $("video").innerHTML=`
+  $("videoBox").innerHTML=`
    <div>
-    ⚠️ Не удалось определить VK-плеер.<br><br>
-    Лучше вставить код iframe из VK.
+    ⚠️ Неверная ссылка
    </div>
   `;
 
@@ -733,33 +910,36 @@ function renderVideo(value){
  }
 
 
- $("video").innerHTML=`
-  <iframe
-   src="${escapeHtml(src)}"
-   allow="autoplay; encrypted-media; fullscreen; picture-in-picture"
-   allowfullscreen>
-  </iframe>
- `;
+ const iframe=
+  document.createElement("iframe");
+
+
+ iframe.src=src;
+
+ iframe.allow=
+  "autoplay; encrypted-media; fullscreen; picture-in-picture";
+
+ iframe.allowFullscreen=true;
+
+
+ $("videoBox").innerHTML="";
+
+ $("videoBox").appendChild(
+  iframe
+ );
+
 }
 
 
-function escapeHtml(text){
-
- return text
-  .replace(/&/g,"&amp;")
-  .replace(/"/g,"&quot;")
-  .replace(/</g,"&lt;")
-  .replace(/>/g,"&gt;");
-}
-
-
-/* =====================================================
-   УСТАНОВИТЬ ВИДЕО
-   ===================================================== */
+/* ================================
+   SET VIDEO
+================================ */
 
 async function setVideo(){
 
- const value=$("videoUrl").value.trim();
+ const value=
+  $("videoUrl").value.trim();
+
 
  if(!value){
 
@@ -772,7 +952,73 @@ async function setVideo(){
  const {data,error}=await db
   .from("rooms")
   .update({
+
    video_url:value,
+
+   is_playing:false
+
+  })
+  .eq("id",room.id)
+  .select()
+  .single();
+
+
+ if(error){
+
+  console.error(error);
+
+  status("Ошибка сохранения");
+
+  return;
+ }
+
+
+ room=data;
+
+ renderVideo(value);
+
+ status("🎬 Видео добавлено");
+
+}
+
+
+/* ================================
+   PLAY / PAUSE
+================================ */
+
+async function playVideo(){
+
+ const {data,error}=await db
+  .from("rooms")
+  .update({
+   is_playing:true
+  })
+  .eq("id",room.id)
+  .select()
+  .single();
+
+
+ if(error){
+
+  console.error(error);
+
+  status("Ошибка");
+
+  return;
+ }
+
+ room=data;
+
+ status("▶️ Смотрим вместе");
+
+}
+
+
+async function pauseVideo(){
+
+ const {data,error}=await db
+  .from("rooms")
+  .update({
    is_playing:false
   })
   .eq("id",room.id)
@@ -784,53 +1030,21 @@ async function setVideo(){
 
   console.error(error);
 
-  notify("Ошибка сохранения");
+  status("Ошибка");
 
   return;
  }
 
  room=data;
 
- renderVideo(value);
-
- notify("Видео добавлено ❤️");
+ status("⏸ Пауза");
 
 }
 
 
-/* =====================================================
-   PLAY / PAUSE
-   ===================================================== */
-
-async function syncPlay(){
-
- await db
-  .from("rooms")
-  .update({
-   is_playing:true
-  })
-  .eq("id",room.id);
-
- notify("▶️ Смотрим вместе");
-}
-
-
-async function syncPause(){
-
- await db
-  .from("rooms")
-  .update({
-   is_playing:false
-  })
-  .eq("id",room.id);
-
- notify("⏸ Пауза");
-}
-
-
-/* =====================================================
-   ПОЛЬЗОВАТЕЛИ
-   ===================================================== */
+/* ================================
+   USERS
+================================ */
 
 async function addUser(){
 
@@ -840,41 +1054,53 @@ async function addUser(){
   .eq("room_id",room.id)
   .eq("user_name",myName);
 
- await db
+
+ const {error}=await db
   .from("room_users")
   .insert({
+
    room_id:room.id,
+
    user_name:myName
+
   });
+
+
+ if(error)
+  console.error(error);
 
 }
 
 
 async function loadUsers(){
 
- const {data}=await db
+ const {data,error}=await db
   .from("room_users")
   .select("*")
   .eq("room_id",room.id)
   .order("created_at");
 
- renderUsers(data||[]);
-}
 
+ if(error){
 
-function renderUsers(list){
+  console.error(error);
+
+  return;
+ }
+
 
  $("users").innerHTML="";
 
- list.forEach(user=>{
 
-  const div=document.createElement("div");
+ (data||[]).forEach(user=>{
+
+  const div=
+   document.createElement("div");
 
   div.className="user";
 
   div.textContent=
-   (user.user_name===myName?"🟢 ":"⚪ ")
-   +user.user_name;
+   "🟢 "+user.user_name;
 
   $("users").appendChild(div);
 
@@ -883,71 +1109,108 @@ function renderUsers(list){
 }
 
 
-/* =====================================================
-   ЧАТ
-   ===================================================== */
+/* ================================
+   CHAT
+================================ */
 
 async function loadMessages(){
 
- const {data}=await db
+ const {data,error}=await db
   .from("messages")
   .select("*")
   .eq("room_id",room.id)
   .order("created_at")
   .limit(100);
 
- $("messages").innerHTML="";
-
- (data||[]).forEach(renderMessage);
-
- scrollChat();
-}
-
-
-function renderMessage(message){
-
- const div=document.createElement("div");
-
- div.className="message";
-
- const name=document.createElement("b");
- name.textContent=message.user_name;
-
- const text=document.createElement("span");
- text.textContent=message.message;
-
- div.appendChild(name);
- div.appendChild(text);
-
- $("messages").appendChild(div);
-
- scrollChat();
-}
-
-
-async function sendMessage(){
-
- const input=$("message");
-
- const text=input.value.trim();
-
- if(!text)return;
-
- input.value="";
-
- const {error}=await db
-  .from("messages")
-  .insert({
-   room_id:room.id,
-   user_name:myName,
-   message:text
-  });
 
  if(error){
 
   console.error(error);
 
-  notify("Ошибка отправки");
+  return;
+ }
+
+
+ $("messages").innerHTML="";
+
+
+ (data||[]).forEach(
+  renderMessage
+ );
+
+
+ scrollChat();
+
+}
+
+
+function renderMessage(item){
+
+ const div=
+  document.createElement("div");
+
+ div.className="message";
+
+
+ const b=
+  document.createElement("b");
+
+ b.textContent=
+  item.user_name;
+
+
+ const text=
+  document.createElement("span");
+
+ text.textContent=
+  item.message;
+
+
+ div.appendChild(b);
+
+ div.appendChild(text);
+
+ $("messages").appendChild(div);
+
+
+ scrollChat();
+
+}
+
+
+async function sendMessage(){
+
+ const input=
+  $("message");
+
+ const text=
+  input.value.trim();
+
+
+ if(!text)return;
+
+
+ input.value="";
+
+
+ const {error}=await db
+  .from("messages")
+  .insert({
+
+   room_id:room.id,
+
+   user_name:myName,
+
+   message:text
+
+  });
+
+
+ if(error){
+
+  console.error(error);
+
+  status("Ошибка отправки");
 
  }
 
@@ -956,126 +1219,151 @@ async function sendMessage(){
 
 function scrollChat(){
 
- $("messages").scrollTop=
-  $("messages").scrollHeight;
+ const box=
+  $("messages");
+
+ box.scrollTop=
+  box.scrollHeight;
 
 }
 
 
-/* =====================================================
+/* ================================
    REALTIME
-   ===================================================== */
+================================ */
 
-function subscribe(){
+function subscribeRealtime(){
 
- roomChannel=db
-  .channel("room-"+room.id)
+ roomChannel=
+  db.channel(
+   "room-"+room.id
+  );
 
-  .on(
-   "postgres_changes",
-   {
-    event:"UPDATE",
-    schema:"public",
-    table:"rooms",
-    filter:"id=eq."+room.id
-   },
-   payload=>{
 
-    const old=room;
+ roomChannel.on(
 
-    room=payload.new;
+  "postgres_changes",
 
-    /*
-      Новое видео
-    */
+  {
+   event:"UPDATE",
+   schema:"public",
+   table:"rooms",
+   filter:"id=eq."+room.id
+  },
 
-    if(
-     old.video_url !==
+  payload=>{
+
+   const old=room;
+
+   room=payload.new;
+
+
+   if(
+    old.video_url !==
+    room.video_url
+   ){
+
+    $("videoUrl").value=
+     room.video_url || "";
+
+    renderVideo(
      room.video_url
-    ){
+    );
 
-     $("videoUrl").value=
-      room.video_url || "";
+    status("🎬 Видео изменилось");
 
-     renderVideo(room.video_url);
-
-     notify("🎬 Видео изменилось");
-
-    }
+   }
 
 
-    /*
-      Синхронизация Play/Pause
-    */
+   if(
+    old.is_playing !==
+    room.is_playing
+   ){
 
-    if(
-     old.is_playing !==
+    status(
      room.is_playing
-    ){
-
-     notify(
-      room.is_playing
-       ? "▶️ Смотрим"
-       : "⏸ Пауза"
-     );
-
-    }
+      ? "▶️ Видео запущено"
+      : "⏸ Видео остановлено"
+    );
 
    }
-  )
 
-  .subscribe();
+  }
 
-
- userChannel=db
-  .channel("users-"+room.id)
-
-  .on(
-   "postgres_changes",
-   {
-    event:"*",
-    schema:"public",
-    table:"room_users",
-    filter:"room_id=eq."+room.id
-   },
-   ()=>{
-    loadUsers();
-   }
-  )
-
-  .subscribe();
+ );
 
 
- messageChannel=db
-  .channel("messages-"+room.id)
+ roomChannel.subscribe();
 
-  .on(
-   "postgres_changes",
-   {
-    event:"INSERT",
-    schema:"public",
-    table:"messages",
-    filter:"room_id=eq."+room.id
-   },
-   payload=>{
 
-    renderMessage(payload.new);
+ userChannel=
+  db.channel(
+   "users-"+room.id
+  );
 
-   }
-  )
 
-  .subscribe();
+ userChannel.on(
+
+  "postgres_changes",
+
+  {
+   event:"*",
+   schema:"public",
+   table:"room_users",
+   filter:"room_id=eq."+room.id
+  },
+
+  ()=>{
+   loadUsers();
+  }
+
+ );
+
+
+ userChannel.subscribe();
+
+
+ messageChannel=
+  db.channel(
+   "messages-"+room.id
+  );
+
+
+ messageChannel.on(
+
+  "postgres_changes",
+
+  {
+   event:"INSERT",
+   schema:"public",
+   table:"messages",
+   filter:"room_id=eq."+room.id
+  },
+
+  payload=>{
+
+   renderMessage(
+    payload.new
+   );
+
+  }
+
+ );
+
+
+ messageChannel.subscribe();
 
 }
 
 
-/* =====================================================
-   ВЫХОД
-   ===================================================== */
+/* ================================
+   LEAVE
+================================ */
 
 async function leaveRoom(){
 
  if(!room)return;
+
 
  await db
   .from("room_users")
@@ -1085,29 +1373,40 @@ async function leaveRoom(){
 
 
  if(roomChannel)
-  await db.removeChannel(roomChannel);
+  await db.removeChannel(
+   roomChannel
+  );
+
 
  if(userChannel)
-  await db.removeChannel(userChannel);
+  await db.removeChannel(
+   userChannel
+  );
+
 
  if(messageChannel)
-  await db.removeChannel(messageChannel);
+  await db.removeChannel(
+   messageChannel
+  );
 
 
  room=null;
 
+
  hide("room");
+
  show("home");
 
- $("messages").innerHTML="";
+
  $("users").innerHTML="";
+ $("messages").innerHTML="";
 
 }
 
 
-/* =====================================================
+/* ================================
    ENTER
-   ===================================================== */
+================================ */
 
 $("message").addEventListener(
  "keydown",
@@ -1117,11 +1416,39 @@ $("message").addEventListener(
  }
 );
 
+
 $("joinCode").addEventListener(
  "keydown",
  e=>{
   if(e.key==="Enter")
    joinRoom();
+ }
+);
+
+
+/* ================================
+   AUTO ROOM FROM URL
+================================ */
+
+window.addEventListener(
+ "load",
+ ()=>{
+
+  const params=
+   new URLSearchParams(
+    location.search
+   );
+
+  const code=
+   params.get("room");
+
+  if(code){
+
+   $("joinCode").value=
+    code.toUpperCase();
+
+  }
+
  }
 );
 
