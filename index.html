@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+
 <title>Томас ❤️ Яна</title>
 
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
@@ -12,7 +13,6 @@
 
 body{
  margin:0;
- min-height:100vh;
  background:#08090d;
  color:#fff;
  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
@@ -31,16 +31,16 @@ button{
 }
 
 #app{
- max-width:1000px;
+ max-width:1050px;
  margin:auto;
- padding:15px
+ padding:14px
 }
 
 /* HOME */
 
 .home{
  max-width:430px;
- margin:65px auto
+ margin:70px auto
 }
 
 .logo{
@@ -49,9 +49,9 @@ button{
  font-weight:900
 }
 
-.subtitle{
+.sub{
  text-align:center;
- color:#858c9b;
+ color:#858c9a;
  margin:7px 0 25px
 }
 
@@ -72,9 +72,9 @@ label{
 input{
  width:100%;
  padding:14px;
- background:#080a0f;
- border:1px solid #343844;
  border-radius:11px;
+ border:1px solid #343844;
+ background:#080a0f;
  color:#fff;
  outline:none
 }
@@ -88,42 +88,40 @@ button{
  border-radius:11px;
  padding:14px;
  margin-top:10px;
- font-weight:800;
  background:#fff;
- color:#000
+ color:#000;
+ font-weight:800
 }
 
-.secondary{
- background:#1c2029;
- color:#fff;
- border:1px solid #303541
+.darkBtn{
+ background:#1b1f28;
+ color:#fff
 }
 
 .info{
  margin-top:12px;
- min-height:20px;
- text-align:center;
- font-size:13px;
  color:#9299a7;
+ font-size:13px;
+ text-align:center;
  word-break:break-word
 }
 
 .error{
- color:#ff7781
+ color:#ff747e
 }
 
 .success{
- color:#72dfa0
+ color:#70dfa0
 }
 
 /* ROOM */
 
 .roomHead{
  display:flex;
- align-items:center;
  justify-content:space-between;
- gap:10px;
- margin:8px 0 15px
+ align-items:center;
+ margin:7px 0 14px;
+ gap:10px
 }
 
 .roomTitle{
@@ -133,7 +131,7 @@ button{
 
 .roomCode{
  color:#858c9a;
- font-size:13px;
+ font-size:12px;
  margin-top:3px
 }
 
@@ -151,7 +149,7 @@ button{
 
 .layout{
  display:grid;
- grid-template-columns:minmax(0,1fr) 300px;
+ grid-template-columns:minmax(0,1fr) 310px;
  gap:14px
 }
 
@@ -164,11 +162,10 @@ button{
  border-radius:16px;
  overflow:hidden;
  display:flex;
- justify-content:center;
  align-items:center;
+ justify-content:center;
  text-align:center;
- color:#777f8e;
- padding:20px
+ color:#747c8b
 }
 
 .video iframe{
@@ -177,35 +174,98 @@ button{
  border:0
 }
 
-.videoInfo{
- color:#858c99;
+.videoEmpty{
  line-height:1.5
 }
 
-.videoTools{
+/* SEARCH */
+
+.searchBox{
+ margin-top:10px;
+ background:#11131a;
+ border:1px solid #292d38;
+ border-radius:15px;
+ padding:12px
+}
+
+.searchRow{
  display:flex;
- gap:7px;
- margin-top:9px
+ gap:7px
 }
 
-.videoTools input{
- min-width:0;
- flex:1
+.searchRow input{
+ min-width:0
 }
 
-.videoTools button{
+.searchRow button{
+ width:52px;
+ margin:0;
+ padding:0
+}
+
+.searchHint{
+ margin-top:8px;
+ font-size:11px;
+ color:#707887
+}
+
+.results{
+ margin-top:10px;
+ display:flex;
+ flex-direction:column;
+ gap:7px
+}
+
+.result{
+ display:flex;
+ align-items:center;
+ gap:10px;
+ padding:9px;
+ border-radius:11px;
+ background:#191d25;
+ border:1px solid #282d38
+}
+
+.resultIcon{
+ width:50px;
+ height:40px;
+ border-radius:7px;
+ background:#252a34;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ flex-shrink:0
+}
+
+.resultInfo{
+ flex:1;
+ min-width:0
+}
+
+.resultTitle{
+ font-size:13px;
+ font-weight:800;
+ white-space:nowrap;
+ overflow:hidden;
+ text-overflow:ellipsis
+}
+
+.resultText{
+ font-size:11px;
+ color:#858c99;
+ margin-top:3px
+}
+
+.watch{
  width:auto;
  margin:0;
- padding:0 18px
+ padding:8px 10px;
+ background:#fff;
+ color:#000;
+ font-size:12px
 }
 
-.hint{
- color:#777f8e;
- font-size:11px;
- margin-top:7px
-}
-
-/* SIDE */
+/* CHAT */
 
 .box{
  background:#11131a;
@@ -227,18 +287,16 @@ button{
 
 .user{
  background:#1b2029;
- border-radius:20px;
  padding:7px 10px;
+ border-radius:20px;
  font-size:13px
 }
 
-/* CHAT */
-
 .chat{
- height:360px;
+ height:380px;
+ margin-top:12px;
  display:flex;
- flex-direction:column;
- margin-top:12px
+ flex-direction:column
 }
 
 .messages{
@@ -271,8 +329,7 @@ button{
 }
 
 .send input{
- min-width:0;
- flex:1
+ min-width:0
 }
 
 .send button{
@@ -281,7 +338,34 @@ button{
  padding:0
 }
 
-@media(max-width:720px){
+/* MODAL */
+
+.modal{
+ position:fixed;
+ inset:0;
+ background:#000c;
+ display:flex;
+ align-items:center;
+ justify-content:center;
+ padding:18px;
+ z-index:20
+}
+
+.modalCard{
+ width:100%;
+ max-width:390px
+}
+
+.close{
+ float:right;
+ width:auto;
+ background:none;
+ color:#888;
+ font-size:25px;
+ margin:0
+}
+
+@media(max-width:760px){
 
  .layout{
   grid-template-columns:1fr
@@ -293,18 +377,6 @@ button{
 
  .chat{
   height:300px
- }
-
-}
-
-@media(max-width:430px){
-
- #app{
-  padding:10px
- }
-
- .logo{
-  font-size:27px
  }
 
 }
@@ -325,7 +397,7 @@ button{
    Томас ❤️ Яна
   </div>
 
-  <div class="subtitle">
+  <div class="sub">
    Смотрим вместе
   </div>
 
@@ -346,7 +418,7 @@ button{
 
    <button
     id="joinBtn"
-    class="secondary"
+    class="darkBtn"
    >
     🔑 Войти по коду
    </button>
@@ -379,7 +451,7 @@ button{
    </div>
 
    <div class="roomCode">
-    Код:
+    Комната:
     <b id="roomCode"></b>
    </div>
 
@@ -399,32 +471,85 @@ button{
 
   <main>
 
+   <!-- VIDEO -->
+
    <div
     id="video"
     class="video"
    >
-    <div class="videoInfo">
+    <div class="videoEmpty">
      🎬<br><br>
-     Вставь ссылку на VK Video
+     Найдите видео ниже
     </div>
    </div>
 
 
-   <div class="videoTools">
+   <!-- SEARCH -->
 
-    <input
-     id="videoUrl"
-     placeholder="https://vk.com/video..."
-    >
+   <div class="searchBox">
 
-    <button id="videoBtn">
-     Смотреть
-    </button>
+    <div class="searchRow">
+
+     <input
+      id="search"
+      placeholder="🔎 Найти видео..."
+      autocomplete="off"
+     >
+
+     <button id="searchBtn">
+      🔍
+     </button>
+
+    </div>
+
+    <div class="searchHint">
+     Поиск подготовлен для подключения VK Video API.
+     Сейчас можно выбирать видео по ссылке.
+    </div>
+
+    <div
+     id="results"
+     class="results"
+    ></div>
 
    </div>
 
-   <div class="hint">
-    Можно вставить ссылку VK Video или готовый iframe-код VK.
+
+   <!-- DIRECT URL FALLBACK -->
+
+   <div
+    style="
+     margin-top:8px;
+     background:#11131a;
+     border:1px solid #292d38;
+     border-radius:12px;
+     padding:10px
+    "
+   >
+
+    <div
+     style="
+      color:#858c99;
+      font-size:11px;
+      margin-bottom:6px
+     "
+    >
+     Пока поиск VK API не подключён — можно вставить embed-ссылку:
+    </div>
+
+    <div class="searchRow">
+
+     <input
+      id="videoUrl"
+      placeholder="VK embed / iframe"
+     >
+
+     <button id="openVideo">
+      ▶
+     </button>
+
+    </div>
+
    </div>
 
 
@@ -433,6 +558,8 @@ button{
     class="info"
    ></div>
 
+
+   <!-- CHAT -->
 
    <div class="box chat">
 
@@ -488,38 +615,18 @@ button{
 </div>
 
 
-<!-- JOIN -->
+<!-- JOIN MODAL -->
 
 <div
  id="joinModal"
- class="hidden"
- style="
-  position:fixed;
-  inset:0;
-  background:#000c;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:18px;
- "
+ class="modal hidden"
 >
 
- <div
-  class="card"
-  style="width:100%;max-width:390px"
- >
+ <div class="card modalCard">
 
   <button
    id="closeJoin"
-   style="
-    float:right;
-    width:auto;
-    margin:0;
-    padding:5px 10px;
-    background:none;
-    color:#888;
-    font-size:25px
-   "
+   class="close"
   >
    ×
   </button>
@@ -555,9 +662,9 @@ button{
 
 <script>
 
-/* =========================================
+/* ==========================================
    SUPABASE
-========================================= */
+========================================== */
 
 const SUPABASE_URL=
 "https://qyjvkiusyiylckaujjiv.supabase.co";
@@ -572,25 +679,24 @@ window.supabase.createClient(
 );
 
 
-/* =========================================
+/* ==========================================
    STATE
-========================================= */
+========================================== */
 
 let room=null;
-let name="";
-
+let currentName="";
 let realtime=null;
 
 
-/* =========================================
+/* ==========================================
    HELPERS
-========================================= */
+========================================== */
 
 const $=id=>
  document.getElementById(id);
 
 
-function homeStatus(text,type=""){
+function setHome(text,type=""){
 
  $("homeStatus").textContent=text;
 
@@ -600,7 +706,7 @@ function homeStatus(text,type=""){
 }
 
 
-function roomStatus(text,type=""){
+function setRoom(text,type=""){
 
  $("roomStatus").textContent=text;
 
@@ -610,7 +716,7 @@ function roomStatus(text,type=""){
 }
 
 
-function joinStatus(text,type=""){
+function setJoin(text,type=""){
 
  $("joinStatus").textContent=text;
 
@@ -620,16 +726,20 @@ function joinStatus(text,type=""){
 }
 
 
-function code(){
+/* ==========================================
+   ROOM CODE
+========================================== */
+
+function makeCode(){
 
  const chars=
  "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
- let result="";
+ let code="";
 
  for(let i=0;i<6;i++){
 
-  result+=chars[
+  code+=chars[
    Math.floor(
     Math.random()*chars.length
    )
@@ -637,24 +747,24 @@ function code(){
 
  }
 
- return result;
+ return code;
 
 }
 
 
-/* =========================================
-   CREATE ROOM
-========================================= */
+/* ==========================================
+   CREATE
+========================================== */
 
 async function createRoom(){
 
- const userName=
+ const name=
   $("name").value.trim();
 
 
- if(!userName){
+ if(!name){
 
-  homeStatus(
+  setHome(
    "❌ Введи имя",
    "error"
   );
@@ -664,31 +774,27 @@ async function createRoom(){
  }
 
 
- name=
-  userName.substring(0,20);
+ currentName=
+  name.substring(0,20);
 
 
  $("createBtn").disabled=true;
 
-
- homeStatus(
+ setHome(
   "⏳ Создаём комнату..."
  );
 
 
  try{
 
-  const newCode=code();
-
-
   const result=
    await db
     .from("rooms")
     .insert({
 
-     code:newCode,
+     code:makeCode(),
 
-     host_name:name,
+     host_name:currentName,
 
      video_url:"",
 
@@ -699,13 +805,8 @@ async function createRoom(){
     .single();
 
 
-  if(result.error){
-
-   throw new Error(
-    result.error.message
-   );
-
-  }
+  if(result.error)
+   throw result.error;
 
 
   room=result.data;
@@ -718,18 +819,13 @@ async function createRoom(){
 
      room_id:room.id,
 
-     user_name:name
+     user_name:currentName
 
     });
 
 
-  if(user.error){
-
-   throw new Error(
-    user.error.message
-   );
-
-  }
+  if(user.error)
+   throw user.error;
 
 
   openRoom();
@@ -739,7 +835,7 @@ async function createRoom(){
 
   console.error(error);
 
-  homeStatus(
+  setHome(
    "❌ "+error.message,
    "error"
   );
@@ -753,9 +849,9 @@ async function createRoom(){
 }
 
 
-/* =========================================
+/* ==========================================
    JOIN
-========================================= */
+========================================== */
 
 $("joinBtn").onclick=()=>{
 
@@ -777,37 +873,32 @@ $("closeJoin").onclick=()=>{
 
 async function joinRoom(){
 
- const userName=
+ const name=
   $("name").value.trim();
 
 
- if(!userName){
+ if(!name){
 
-  joinStatus(
+  setJoin(
    "Сначала введи имя",
    "error"
   );
-
-  $("joinModal")
-   .classList.add("hidden");
-
-  $("name").focus();
 
   return;
 
  }
 
 
- const roomCode=
+ const code=
   $("joinCode")
    .value
    .trim()
    .toUpperCase();
 
 
- if(roomCode.length!==6){
+ if(code.length!==6){
 
-  joinStatus(
+  setJoin(
    "❌ Код должен быть из 6 символов",
    "error"
   );
@@ -817,11 +908,11 @@ async function joinRoom(){
  }
 
 
- name=
-  userName.substring(0,20);
+ currentName=
+  name.substring(0,20);
 
 
- joinStatus(
+ setJoin(
   "⏳ Ищем комнату..."
  );
 
@@ -832,22 +923,17 @@ async function joinRoom(){
    await db
     .from("rooms")
     .select("*")
-    .eq("code",roomCode)
+    .eq("code",code)
     .maybeSingle();
 
 
-  if(result.error){
-
-   throw new Error(
-    result.error.message
-   );
-
-  }
+  if(result.error)
+   throw result.error;
 
 
   if(!result.data){
 
-   joinStatus(
+   setJoin(
     "❌ Комната не найдена",
     "error"
    );
@@ -867,18 +953,13 @@ async function joinRoom(){
 
      room_id:room.id,
 
-     user_name:name
+     user_name:currentName
 
     });
 
 
-  if(user.error){
-
-   throw new Error(
-    user.error.message
-   );
-
-  }
+  if(user.error)
+   throw user.error;
 
 
   $("joinModal")
@@ -890,7 +971,7 @@ async function joinRoom(){
 
  }catch(error){
 
-  joinStatus(
+  setJoin(
    "❌ "+error.message,
    "error"
   );
@@ -900,9 +981,9 @@ async function joinRoom(){
 }
 
 
-/* =========================================
+/* ==========================================
    OPEN ROOM
-========================================= */
+========================================== */
 
 async function openRoom(){
 
@@ -917,36 +998,160 @@ async function openRoom(){
   room.code;
 
 
- $("videoUrl").value=
-  room.video_url || "";
-
-
  if(room.video_url)
-  showVideo(room.video_url);
+  renderVideo(
+   room.video_url
+  );
 
 
  await loadUsers();
 
  await loadMessages();
 
- subscribe();
+ subscribeRealtime();
 
 }
 
 
-/* =========================================
-   VK VIDEO
-========================================= */
+/* ==========================================
+   SEARCH
+========================================== */
 
-function showVideo(value){
+function searchVideo(){
 
- let src=
-  value.trim();
+ const query=
+  $("search")
+   .value
+   .trim();
+
+
+ if(!query){
+
+  setRoom(
+   "Введите название видео."
+  );
+
+  return;
+
+ }
 
 
  /*
-  Если пользователь вставил iframe VK,
-  вытаскиваем src.
+  В этой лёгкой версии мы НЕ делаем
+  фальшивый запрос к VK.
+
+  Показываем поисковую карточку,
+  куда можно вставить embed.
+ */
+
+ $("results").innerHTML="";
+
+
+ const result=
+  document.createElement("div");
+
+ result.className="result";
+
+
+ result.innerHTML=`
+  <div class="resultIcon">🎬</div>
+
+  <div class="resultInfo">
+   <div class="resultTitle">
+    ${escapeHtml(query)}
+   </div>
+
+   <div class="resultText">
+    Результат VK Video
+   </div>
+  </div>
+
+  <button class="watch">
+   Выбрать
+  </button>
+ `;
+
+
+ result
+  .querySelector(".watch")
+  .onclick=()=>{
+
+   setRoom(
+    "Вставь embed-код этого видео в поле ниже."
+   );
+
+   $("videoUrl").focus();
+
+  };
+
+
+ $("results")
+  .appendChild(result);
+
+
+ setRoom(
+  "🔎 Поиск готов. Для настоящего поиска VK подключим VK API."
+ );
+
+}
+
+
+$("searchBtn").onclick=
+ searchVideo;
+
+
+$("search").addEventListener(
+ "keydown",
+ e=>{
+
+  if(e.key==="Enter")
+   searchVideo();
+
+ }
+);
+
+
+/* ==========================================
+   ESCAPE
+========================================== */
+
+function escapeHtml(text){
+
+ return text
+  .replaceAll("&","&amp;")
+  .replaceAll("<","&lt;")
+  .replaceAll(">","&gt;")
+  .replaceAll('"',"&quot;")
+  .replaceAll("'","&#039;");
+
+}
+
+
+/* ==========================================
+   VIDEO
+========================================== */
+
+function renderVideo(value){
+
+ if(!value){
+
+  $("video").innerHTML=`
+   <div class="videoEmpty">
+    🎬<br><br>
+    Найдите видео ниже
+   </div>
+  `;
+
+  return;
+
+ }
+
+
+ let src=value.trim();
+
+
+ /*
+  Если вставлен iframe
  */
 
  if(src.includes("<iframe")){
@@ -963,39 +1168,17 @@ function showVideo(value){
 
 
  /*
-  Если это уже embed-ссылка
+  Разрешаем только embed / HTTPS
  */
 
  if(
-  src.includes("vk.com/video_ext.php") ||
-  src.includes("vk.ru/video_ext.php")
- ){
-
-  createPlayer(src);
-
-  return;
-
- }
-
-
- /*
-  Обычная ссылка VK.
-  Саму страницу vk.com/video...
-  нельзя надёжно вставить в iframe.
- */
-
- if(
-  src.includes("vk.com/video") ||
-  src.includes("vk.ru/video")
+  !src.startsWith("https://") &&
+  !src.startsWith("http://")
  ){
 
   $("video").innerHTML=`
-   <div class="videoInfo">
-    ⚠️ Это обычная ссылка VK Video.<br><br>
-    Для встроенного просмотра нужен
-    <b>iframe / embed-код VK</b>.<br><br>
-    Открой видео VK → «Поделиться» →
-    «Код для вставки» и вставь его сюда.
+   <div class="videoEmpty">
+    ❌ Неверный embed-адрес
    </div>
   `;
 
@@ -1003,33 +1186,6 @@ function showVideo(value){
 
  }
 
-
- /*
-  Любой другой HTTPS iframe URL
- */
-
- if(
-  src.startsWith("https://") ||
-  src.startsWith("http://")
- ){
-
-  createPlayer(src);
-
-  return;
-
- }
-
-
- $("video").innerHTML=`
-  <div class="videoInfo">
-   ❌ Не удалось распознать ссылку.
-  </div>
- `;
-
-}
-
-
-function createPlayer(src){
 
  const iframe=
   document.createElement("iframe");
@@ -1051,11 +1207,11 @@ function createPlayer(src){
 }
 
 
-/* =========================================
+/* ==========================================
    SAVE VIDEO
-========================================= */
+========================================== */
 
-$("videoBtn").onclick=
+$("openVideo").onclick=
  async()=>{
 
   if(!room)return;
@@ -1069,8 +1225,8 @@ $("videoBtn").onclick=
 
   if(!value){
 
-   roomStatus(
-    "❌ Вставь видео VK",
+   setRoom(
+    "❌ Вставь embed-ссылку или iframe.",
     "error"
    );
 
@@ -1095,7 +1251,7 @@ $("videoBtn").onclick=
 
   if(result.error){
 
-   roomStatus(
+   setRoom(
     "❌ "+result.error.message,
     "error"
    );
@@ -1107,19 +1263,19 @@ $("videoBtn").onclick=
 
   room=result.data;
 
-  showVideo(value);
+  renderVideo(value);
 
-  roomStatus(
-   "🎬 Видео сохранено",
+  setRoom(
+   "🎬 Видео выбрано. Оно синхронизировано с комнатой.",
    "success"
   );
 
 };
 
 
-/* =========================================
+/* ==========================================
    USERS
-========================================= */
+========================================== */
 
 async function loadUsers(){
 
@@ -1171,9 +1327,9 @@ async function loadUsers(){
 }
 
 
-/* =========================================
+/* ==========================================
    CHAT
-========================================= */
+========================================== */
 
 async function loadMessages(){
 
@@ -1224,25 +1380,25 @@ function renderMessage(item){
  el.className="message";
 
 
- const user=
+ const n=
   document.createElement("div");
 
- user.className="messageName";
+ n.className="messageName";
 
- user.textContent=
+ n.textContent=
   item.user_name;
 
 
- const text=
+ const t=
   document.createElement("div");
 
- text.textContent=
+ t.textContent=
   item.message;
 
 
- el.appendChild(user);
+ el.appendChild(n);
 
- el.appendChild(text);
+ el.appendChild(t);
 
 
  $("messages")
@@ -1267,6 +1423,7 @@ async function sendMessage(){
  const input=
   $("message");
 
+
  const text=
   input.value.trim();
 
@@ -1284,7 +1441,7 @@ async function sendMessage(){
 
     room_id:room.id,
 
-    user_name:name,
+    user_name:currentName,
 
     message:text
 
@@ -1293,9 +1450,8 @@ async function sendMessage(){
 
  if(result.error){
 
-  roomStatus(
-   "❌ Чат: "+
-   result.error.message,
+  setRoom(
+   "❌ "+result.error.message,
    "error"
   );
 
@@ -1319,11 +1475,11 @@ $("message").addEventListener(
 );
 
 
-/* =========================================
+/* ==========================================
    REALTIME
-========================================= */
+========================================== */
 
-function subscribe(){
+function subscribeRealtime(){
 
  if(!room)return;
 
@@ -1349,12 +1505,8 @@ function subscribe(){
       payload.new;
 
 
-     $("videoUrl").value=
-      room.video_url || "";
-
-
      if(room.video_url)
-      showVideo(
+      renderVideo(
        room.video_url
       );
 
@@ -1400,11 +1552,6 @@ function subscribe(){
     },
     payload=>{
 
-     /*
-      Не дублируем собственное сообщение,
-      если Realtime вернул его.
-     */
-
      renderMessage(
       payload.new
      );
@@ -1419,9 +1566,9 @@ function subscribe(){
 }
 
 
-/* =========================================
+/* ==========================================
    LEAVE
-========================================= */
+========================================== */
 
 $("leaveBtn").onclick=
  async()=>{
@@ -1437,7 +1584,7 @@ $("leaveBtn").onclick=
     )
     .eq(
      "user_name",
-     name
+     currentName
     );
 
   }
@@ -1463,7 +1610,7 @@ $("leaveBtn").onclick=
    .classList.remove("hidden");
 
 
-  homeStatus(
+  setHome(
    "Ты вышел из комнаты.",
    "success"
   );
@@ -1471,9 +1618,9 @@ $("leaveBtn").onclick=
 };
 
 
-/* =========================================
+/* ==========================================
    BUTTONS
-========================================= */
+========================================== */
 
 $("createBtn").onclick=
  createRoom;
