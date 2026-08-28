@@ -23,7 +23,8 @@ button,input{
 }
 
 button{
- cursor:pointer
+ cursor:pointer;
+ border:0
 }
 
 .hidden{
@@ -31,6 +32,7 @@ button{
 }
 
 #app{
+ width:100%;
  max-width:1050px;
  margin:auto;
  padding:14px
@@ -40,7 +42,7 @@ button{
 
 .home{
  max-width:430px;
- margin:70px auto
+ margin:65px auto
 }
 
 .logo{
@@ -83,11 +85,11 @@ input:focus{
  border-color:#777cff
 }
 
-button{
- border:0;
- border-radius:11px;
+.mainBtn{
+ width:100%;
  padding:14px;
  margin-top:10px;
+ border-radius:11px;
  background:#fff;
  color:#000;
  font-weight:800
@@ -120,8 +122,8 @@ button{
  display:flex;
  justify-content:space-between;
  align-items:center;
- margin:7px 0 14px;
- gap:10px
+ gap:10px;
+ margin:7px 0 14px
 }
 
 .roomTitle{
@@ -130,7 +132,7 @@ button{
 }
 
 .roomCode{
- color:#858c9a;
+ color:#858c99;
  font-size:12px;
  margin-top:3px
 }
@@ -143,8 +145,10 @@ button{
 .leave{
  width:auto;
  margin:0;
+ padding:10px 14px;
  background:#29171b;
- color:#ff9da5
+ color:#ff9da5;
+ border-radius:10px
 }
 
 .layout{
@@ -175,6 +179,7 @@ button{
 }
 
 .videoEmpty{
+ padding:20px;
  line-height:1.5
 }
 
@@ -194,41 +199,47 @@ button{
 }
 
 .searchRow input{
- min-width:0
+ min-width:0;
+ flex:1
 }
 
-.searchRow button{
+.searchBtn{
  width:52px;
  margin:0;
- padding:0
+ padding:0;
+ border-radius:11px;
+ background:#fff;
+ color:#000;
+ font-weight:900
 }
 
 .searchHint{
- margin-top:8px;
+ color:#707887;
  font-size:11px;
- color:#707887
+ line-height:1.4;
+ margin-top:8px
 }
 
 .results{
- margin-top:10px;
  display:flex;
  flex-direction:column;
- gap:7px
+ gap:7px;
+ margin-top:10px
 }
 
 .result{
  display:flex;
  align-items:center;
- gap:10px;
+ gap:9px;
  padding:9px;
- border-radius:11px;
  background:#191d25;
- border:1px solid #282d38
+ border:1px solid #292e38;
+ border-radius:11px
 }
 
-.resultIcon{
- width:50px;
- height:40px;
+.thumb{
+ width:55px;
+ height:42px;
  border-radius:7px;
  background:#252a34;
  display:flex;
@@ -250,9 +261,9 @@ button{
  text-overflow:ellipsis
 }
 
-.resultText{
- font-size:11px;
+.resultSub{
  color:#858c99;
+ font-size:11px;
  margin-top:3px
 }
 
@@ -262,10 +273,11 @@ button{
  padding:8px 10px;
  background:#fff;
  color:#000;
+ border-radius:8px;
  font-size:12px
 }
 
-/* CHAT */
+/* USERS */
 
 .box{
  background:#11131a;
@@ -291,6 +303,8 @@ button{
  border-radius:20px;
  font-size:13px
 }
+
+/* CHAT */
 
 .chat{
  height:380px;
@@ -335,7 +349,10 @@ button{
 .send button{
  width:48px;
  margin:0;
- padding:0
+ padding:0;
+ border-radius:10px;
+ background:#fff;
+ color:#000
 }
 
 /* MODAL */
@@ -343,12 +360,12 @@ button{
 .modal{
  position:fixed;
  inset:0;
+ z-index:50;
  background:#000c;
  display:flex;
  align-items:center;
  justify-content:center;
- padding:18px;
- z-index:20
+ padding:18px
 }
 
 .modalCard{
@@ -361,8 +378,9 @@ button{
  width:auto;
  background:none;
  color:#888;
- font-size:25px;
- margin:0
+ font-size:26px;
+ margin:0;
+ padding:0
 }
 
 @media(max-width:760px){
@@ -387,7 +405,7 @@ button{
 
 <div id="app">
 
-<!-- HOME -->
+<!-- ================= HOME ================= -->
 
 <section id="home">
 
@@ -403,22 +421,27 @@ button{
 
   <div class="card">
 
-   <label>Имя</label>
+   <label>
+    Твоё имя
+   </label>
 
    <input
     id="name"
     maxlength="20"
-    placeholder="Томас"
+    placeholder="Например: Томас"
     autocomplete="off"
    >
 
-   <button id="createBtn">
+   <button
+    id="createBtn"
+    class="mainBtn"
+   >
     ❤️ Создать комнату
    </button>
 
    <button
     id="joinBtn"
-    class="darkBtn"
+    class="mainBtn darkBtn"
    >
     🔑 Войти по коду
    </button>
@@ -435,7 +458,7 @@ button{
 </section>
 
 
-<!-- ROOM -->
+<!-- ================= ROOM ================= -->
 
 <section
  id="room"
@@ -451,7 +474,7 @@ button{
    </div>
 
    <div class="roomCode">
-    Комната:
+    Код комнаты:
     <b id="roomCode"></b>
    </div>
 
@@ -477,10 +500,12 @@ button{
     id="video"
     class="video"
    >
+
     <div class="videoEmpty">
      🎬<br><br>
-     Найдите видео ниже
+     Найдите видео через поиск
     </div>
+
    </div>
 
 
@@ -496,15 +521,18 @@ button{
       autocomplete="off"
      >
 
-     <button id="searchBtn">
+     <button
+      id="searchBtn"
+      class="searchBtn"
+     >
       🔍
      </button>
 
     </div>
 
     <div class="searchHint">
-     Поиск подготовлен для подключения VK Video API.
-     Сейчас можно выбирать видео по ссылке.
+     Здесь будет общий поиск видео выбранного сервиса.
+     YouTube и VK напрямую из браузера не используем.
     </div>
 
     <div
@@ -515,7 +543,7 @@ button{
    </div>
 
 
-   <!-- DIRECT URL FALLBACK -->
+   <!-- VIDEO EMBED -->
 
    <div
     style="
@@ -534,17 +562,20 @@ button{
       margin-bottom:6px
      "
     >
-     Пока поиск VK API не подключён — можно вставить embed-ссылку:
+     Тест плеера: вставь готовый embed URL
     </div>
 
     <div class="searchRow">
 
      <input
       id="videoUrl"
-      placeholder="VK embed / iframe"
+      placeholder="https://..."
      >
 
-     <button id="openVideo">
+     <button
+      id="openVideo"
+      class="searchBtn"
+     >
       ▶
      </button>
 
@@ -615,7 +646,7 @@ button{
 </div>
 
 
-<!-- JOIN MODAL -->
+<!-- ================= JOIN ================= -->
 
 <div
  id="joinModal"
@@ -646,7 +677,10 @@ button{
    style="text-transform:uppercase"
   >
 
-  <button id="confirmJoin">
+  <button
+   id="confirmJoin"
+   class="mainBtn"
+  >
    Войти
   </button>
 
@@ -684,7 +718,9 @@ window.supabase.createClient(
 ========================================== */
 
 let room=null;
+
 let currentName="";
+
 let realtime=null;
 
 
@@ -692,11 +728,11 @@ let realtime=null;
    HELPERS
 ========================================== */
 
-const $=id=>
- document.getElementById(id);
+const $=
+ id=>document.getElementById(id);
 
 
-function setHome(text,type=""){
+function homeStatus(text,type=""){
 
  $("homeStatus").textContent=text;
 
@@ -706,7 +742,7 @@ function setHome(text,type=""){
 }
 
 
-function setRoom(text,type=""){
+function roomStatus(text,type=""){
 
  $("roomStatus").textContent=text;
 
@@ -716,7 +752,7 @@ function setRoom(text,type=""){
 }
 
 
-function setJoin(text,type=""){
+function joinStatus(text,type=""){
 
  $("joinStatus").textContent=text;
 
@@ -730,16 +766,16 @@ function setJoin(text,type=""){
    ROOM CODE
 ========================================== */
 
-function makeCode(){
+function generateCode(){
 
  const chars=
  "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
- let code="";
+ let result="";
 
  for(let i=0;i<6;i++){
 
-  code+=chars[
+  result+=chars[
    Math.floor(
     Math.random()*chars.length
    )
@@ -747,25 +783,25 @@ function makeCode(){
 
  }
 
- return code;
+ return result;
 
 }
 
 
 /* ==========================================
-   CREATE
+   CREATE ROOM
 ========================================== */
 
 async function createRoom(){
 
- const name=
+ const enteredName=
   $("name").value.trim();
 
 
- if(!name){
+ if(!enteredName){
 
-  setHome(
-   "❌ Введи имя",
+  homeStatus(
+   "❌ Введи своё имя",
    "error"
   );
 
@@ -774,25 +810,36 @@ async function createRoom(){
  }
 
 
+ /*
+  ВАЖНО:
+  имя участника берётся только
+  из текущего поля.
+ */
+
  currentName=
-  name.substring(0,20);
+  enteredName.substring(0,20);
 
 
  $("createBtn").disabled=true;
 
- setHome(
+
+ homeStatus(
   "⏳ Создаём комнату..."
  );
 
 
  try{
 
+  const roomCode=
+   generateCode();
+
+
   const result=
    await db
     .from("rooms")
     .insert({
 
-     code:makeCode(),
+     code:roomCode,
 
      host_name:currentName,
 
@@ -812,7 +859,12 @@ async function createRoom(){
   room=result.data;
 
 
-  const user=
+  /*
+   Создатель комнаты тоже
+   записывается как отдельный участник.
+  */
+
+  const participant=
    await db
     .from("room_users")
     .insert({
@@ -824,8 +876,8 @@ async function createRoom(){
     });
 
 
-  if(user.error)
-   throw user.error;
+  if(participant.error)
+   throw participant.error;
 
 
   openRoom();
@@ -835,7 +887,7 @@ async function createRoom(){
 
   console.error(error);
 
-  setHome(
+  homeStatus(
    "❌ "+error.message,
    "error"
   );
@@ -850,56 +902,26 @@ async function createRoom(){
 
 
 /* ==========================================
-   JOIN
+   JOIN ROOM
 ========================================== */
-
-$("joinBtn").onclick=()=>{
-
- $("joinModal")
-  .classList.remove("hidden");
-
- $("joinCode").focus();
-
-};
-
-
-$("closeJoin").onclick=()=>{
-
- $("joinModal")
-  .classList.add("hidden");
-
-};
-
 
 async function joinRoom(){
 
- const name=
+ const enteredName=
   $("name").value.trim();
 
 
- if(!name){
-
-  setJoin(
-   "Сначала введи имя",
-   "error"
-  );
-
-  return;
-
- }
-
-
- const code=
+ const enteredCode=
   $("joinCode")
    .value
    .trim()
    .toUpperCase();
 
 
- if(code.length!==6){
+ if(!enteredName){
 
-  setJoin(
-   "❌ Код должен быть из 6 символов",
+  joinStatus(
+   "❌ Сначала введи своё имя",
    "error"
   );
 
@@ -908,11 +930,30 @@ async function joinRoom(){
  }
 
 
+ if(enteredCode.length!==6){
+
+  joinStatus(
+   "❌ Код должен содержать 6 символов",
+   "error"
+  );
+
+  return;
+
+ }
+
+
+ /*
+  ВАЖНО:
+  здесь НЕ используется host_name.
+  Имя Яны берётся именно
+  из поля имени на её устройстве.
+ */
+
  currentName=
-  name.substring(0,20);
+  enteredName.substring(0,20);
 
 
- setJoin(
+ joinStatus(
   "⏳ Ищем комнату..."
  );
 
@@ -923,7 +964,10 @@ async function joinRoom(){
    await db
     .from("rooms")
     .select("*")
-    .eq("code",code)
+    .eq(
+     "code",
+     enteredCode
+    )
     .maybeSingle();
 
 
@@ -933,7 +977,7 @@ async function joinRoom(){
 
   if(!result.data){
 
-   setJoin(
+   joinStatus(
     "❌ Комната не найдена",
     "error"
    );
@@ -946,7 +990,7 @@ async function joinRoom(){
   room=result.data;
 
 
-  const user=
+  const participant=
    await db
     .from("room_users")
     .insert({
@@ -958,8 +1002,8 @@ async function joinRoom(){
     });
 
 
-  if(user.error)
-   throw user.error;
+  if(participant.error)
+   throw participant.error;
 
 
   $("joinModal")
@@ -971,7 +1015,9 @@ async function joinRoom(){
 
  }catch(error){
 
-  setJoin(
+  console.error(error);
+
+  joinStatus(
    "❌ "+error.message,
    "error"
   );
@@ -990,6 +1036,7 @@ async function openRoom(){
  $("home")
   .classList.add("hidden");
 
+
  $("room")
   .classList.remove("hidden");
 
@@ -998,10 +1045,13 @@ async function openRoom(){
   room.code;
 
 
- if(room.video_url)
+ if(room.video_url){
+
   renderVideo(
    room.video_url
   );
+
+ }
 
 
  await loadUsers();
@@ -1014,7 +1064,7 @@ async function openRoom(){
 
 
 /* ==========================================
-   SEARCH
+   SEARCH UI
 ========================================== */
 
 function searchVideo(){
@@ -1027,8 +1077,8 @@ function searchVideo(){
 
  if(!query){
 
-  setRoom(
-   "Введите название видео."
+  roomStatus(
+   "🔎 Введи название видео."
   );
 
   return;
@@ -1037,11 +1087,10 @@ function searchVideo(){
 
 
  /*
-  В этой лёгкой версии мы НЕ делаем
-  фальшивый запрос к VK.
-
-  Показываем поисковую карточку,
-  куда можно вставить embed.
+  Это НЕ фальшивый запрос к VK.
+  Пока настоящий видеосервис API
+  не подключён, мы честно показываем
+  поисковую карточку.
  */
 
  $("results").innerHTML="";
@@ -1050,25 +1099,33 @@ function searchVideo(){
  const result=
   document.createElement("div");
 
- result.className="result";
+
+ result.className=
+  "result";
 
 
  result.innerHTML=`
-  <div class="resultIcon">🎬</div>
+
+  <div class="thumb">
+   🎬
+  </div>
 
   <div class="resultInfo">
+
    <div class="resultTitle">
     ${escapeHtml(query)}
    </div>
 
-   <div class="resultText">
-    Результат VK Video
+   <div class="resultSub">
+    Источник видео ещё не подключён
    </div>
+
   </div>
 
   <button class="watch">
    Выбрать
   </button>
+
  `;
 
 
@@ -1076,8 +1133,8 @@ function searchVideo(){
   .querySelector(".watch")
   .onclick=()=>{
 
-   setRoom(
-    "Вставь embed-код этого видео в поле ниже."
+   roomStatus(
+    "Для этого результата пока нужен embed-адрес видео."
    );
 
    $("videoUrl").focus();
@@ -1089,8 +1146,8 @@ function searchVideo(){
   .appendChild(result);
 
 
- setRoom(
-  "🔎 Поиск готов. Для настоящего поиска VK подключим VK API."
+ roomStatus(
+  "🔎 Интерфейс поиска работает. Осталось подключить реальный источник видео."
  );
 
 }
@@ -1112,7 +1169,7 @@ $("search").addEventListener(
 
 
 /* ==========================================
-   ESCAPE
+   HTML ESCAPE
 ========================================== */
 
 function escapeHtml(text){
@@ -1138,7 +1195,7 @@ function renderVideo(value){
   $("video").innerHTML=`
    <div class="videoEmpty">
     🎬<br><br>
-    Найдите видео ниже
+    Найдите видео через поиск
    </div>
   `;
 
@@ -1147,11 +1204,12 @@ function renderVideo(value){
  }
 
 
- let src=value.trim();
+ let src=
+  value.trim();
 
 
  /*
-  Если вставлен iframe
+  Поддержка iframe.
  */
 
  if(src.includes("<iframe")){
@@ -1167,10 +1225,6 @@ function renderVideo(value){
  }
 
 
- /*
-  Разрешаем только embed / HTTPS
- */
-
  if(
   !src.startsWith("https://") &&
   !src.startsWith("http://")
@@ -1178,7 +1232,7 @@ function renderVideo(value){
 
   $("video").innerHTML=`
    <div class="videoEmpty">
-    ❌ Неверный embed-адрес
+    ❌ Неверный адрес плеера
    </div>
   `;
 
@@ -1225,8 +1279,8 @@ $("openVideo").onclick=
 
   if(!value){
 
-   setRoom(
-    "❌ Вставь embed-ссылку или iframe.",
+   roomStatus(
+    "❌ Вставь embed-адрес.",
     "error"
    );
 
@@ -1251,7 +1305,7 @@ $("openVideo").onclick=
 
   if(result.error){
 
-   setRoom(
+   roomStatus(
     "❌ "+result.error.message,
     "error"
    );
@@ -1263,10 +1317,12 @@ $("openVideo").onclick=
 
   room=result.data;
 
+
   renderVideo(value);
 
-  setRoom(
-   "🎬 Видео выбрано. Оно синхронизировано с комнатой.",
+
+  roomStatus(
+   "🎬 Видео выбрано и отправлено в комнату.",
    "success"
   );
 
@@ -1377,13 +1433,15 @@ function renderMessage(item){
  const el=
   document.createElement("div");
 
- el.className="message";
+ el.className=
+  "message";
 
 
  const n=
   document.createElement("div");
 
- n.className="messageName";
+ n.className=
+  "messageName";
 
  n.textContent=
   item.user_name;
@@ -1450,8 +1508,9 @@ async function sendMessage(){
 
  if(result.error){
 
-  setRoom(
-   "❌ "+result.error.message,
+  roomStatus(
+   "❌ Чат: "+
+   result.error.message,
    "error"
   );
 
@@ -1505,10 +1564,13 @@ function subscribeRealtime(){
       payload.new;
 
 
-     if(room.video_url)
+     if(room.video_url){
+
       renderVideo(
        room.video_url
       );
+
+     }
 
     }
    )
@@ -1606,6 +1668,7 @@ $("leaveBtn").onclick=
   $("room")
    .classList.add("hidden");
 
+
   $("home")
    .classList.remove("hidden");
 
@@ -1619,15 +1682,40 @@ $("leaveBtn").onclick=
 
 
 /* ==========================================
-   BUTTONS
+   JOIN MODAL
 ========================================== */
-
-$("createBtn").onclick=
- createRoom;
 
 $("confirmJoin").onclick=
  joinRoom;
 
+
+$("closeJoin").onclick=
+ ()=>{
+
+  $("joinModal")
+   .classList.add("hidden");
+
+ };
+
+
+/* ==========================================
+   OPEN JOIN
+========================================== */
+
+$("joinBtn").onclick=
+ ()=>{
+
+  $("joinModal")
+   .classList.remove("hidden");
+
+  $("joinCode").focus();
+
+ };
+
+
+/* ==========================================
+   KEYBOARD
+========================================== */
 
 $("name").addEventListener(
  "keydown",
@@ -1648,6 +1736,15 @@ $("joinCode").addEventListener(
    joinRoom();
 
  }
+);
+
+
+/* ==========================================
+   START
+========================================== */
+
+console.log(
+ "❤️ Томас + Яна: приложение запущено"
 );
 
 </script>
