@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="viewport" content="width=device-width,initial-scale=1">
 
 <title>Томас ❤️ Яна</title>
 
@@ -13,6 +13,7 @@
 
 body{
  margin:0;
+ min-height:100vh;
  background:#08090d;
  color:#fff;
  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif
@@ -22,161 +23,129 @@ button,input{
  font:inherit
 }
 
-button{
- cursor:pointer
-}
-
-input{
- outline:none
-}
-
-.hidden{
- display:none!important
-}
-
 #app{
  width:100%;
- max-width:1000px;
+ max-width:900px;
  margin:auto;
- padding:14px
-}
-
-/* HOME */
-
-.home{
- max-width:430px;
- margin:70px auto
-}
-
-.logo{
- text-align:center;
- font-size:30px;
- font-weight:900
-}
-
-.subtitle{
- text-align:center;
- color:#858b98;
- margin:7px 0 25px
+ padding:20px
 }
 
 .card{
+ max-width:430px;
+ margin:60px auto;
+ padding:24px;
  background:#11131a;
  border:1px solid #292d38;
- border-radius:20px;
- padding:20px
+ border-radius:20px
+}
+
+h1{
+ text-align:center;
+ margin:0;
+ font-size:28px
+}
+
+.sub{
+ text-align:center;
+ color:#8d94a3;
+ margin:8px 0 25px
 }
 
 label{
  display:block;
- color:#9298a6;
+ color:#9ba1ae;
  font-size:13px;
  margin-bottom:7px
 }
 
 input{
  width:100%;
- background:#080a0f;
- color:#fff;
- border:1px solid #343844;
- border-radius:11px;
- padding:14px
-}
-
-input:focus{
- border-color:#777cff
-}
-
-.btn{
- width:100%;
- border:0;
- border-radius:11px;
  padding:14px;
+ border-radius:12px;
+ border:1px solid #343844;
+ background:#080a0f;
+ color:white;
+ outline:none
+}
+
+button{
+ width:100%;
  margin-top:10px;
+ padding:14px;
+ border:0;
+ border-radius:12px;
+ background:white;
+ color:#000;
  font-weight:800
 }
 
-.primary{
- background:#fff;
- color:#000
+button:disabled{
+ opacity:.5
 }
 
-.secondary{
- background:#1b1e27;
- color:#fff;
- border:1px solid #303541
-}
-
-.info{
- min-height:20px;
- margin-top:12px;
- text-align:center;
+#status{
+ margin-top:15px;
+ padding:12px;
+ border-radius:10px;
+ background:#0b0d12;
+ color:#aeb5c2;
  font-size:13px;
- color:#9299a8;
+ line-height:1.5;
  word-break:break-word
 }
 
-.error{
- color:#ff7882
+.ok{
+ color:#72e3a0!important
 }
 
-.success{
- color:#73e0a0
+.err{
+ color:#ff737e!important
 }
 
-/* ROOM */
+.hidden{
+ display:none!important
+}
+
+.room{
+ max-width:900px;
+ margin:30px auto
+}
 
 .roomHead{
  display:flex;
- align-items:center;
  justify-content:space-between;
- gap:10px;
- margin:8px 0 14px
+ align-items:center;
+ gap:15px;
+ margin-bottom:15px
 }
 
 .roomTitle{
- font-size:21px;
+ font-size:22px;
  font-weight:900
 }
 
-.roomCode{
- margin-top:3px;
- font-size:12px;
- color:#858c9a
+.code{
+ color:#999;
+ font-size:13px;
+ margin-top:4px
 }
 
-.roomCode b{
+.code b{
  color:#fff;
- letter-spacing:2px
+ letter-spacing:3px
 }
-
-.leave{
- border:0;
- border-radius:10px;
- padding:10px 13px;
- background:#29171b;
- color:#ff9da5
-}
-
-.layout{
- display:grid;
- grid-template-columns:minmax(0,1fr) 300px;
- gap:14px
-}
-
-/* VIDEO */
 
 .video{
  width:100%;
  aspect-ratio:16/9;
  background:#000;
  border-radius:16px;
- overflow:hidden;
  display:flex;
- justify-content:center;
  align-items:center;
+ justify-content:center;
+ color:#777;
  text-align:center;
- color:#717887
+ overflow:hidden
 }
 
 .video iframe{
@@ -185,184 +154,72 @@ input:focus{
  border:0
 }
 
-.videoInput{
- display:flex;
- gap:7px;
- margin-top:9px
-}
-
-.videoInput input{
- min-width:0
-}
-
-.videoInput button{
- border:0;
- border-radius:10px;
- background:#fff;
- color:#000;
- padding:0 16px;
- font-weight:800
-}
-
-.controls{
+.videoTools{
  display:flex;
  gap:7px;
  margin-top:8px
 }
 
-.controls button{
- flex:1;
- border:0;
- border-radius:10px;
- padding:12px;
- background:#191d25;
- color:#fff
+.videoTools input{
+ flex:1
 }
 
-/* BOX */
+.videoTools button{
+ width:auto;
+ margin:0;
+ padding:0 18px
+}
 
-.box{
+.chat{
+ margin-top:15px;
  background:#11131a;
  border:1px solid #292d38;
  border-radius:15px;
- padding:13px
-}
-
-.boxTitle{
- font-weight:900;
- margin-bottom:10px
-}
-
-/* USERS */
-
-.users{
- display:flex;
- flex-wrap:wrap;
- gap:6px
-}
-
-.user{
- background:#1b1f28;
- padding:7px 10px;
- border-radius:20px;
- font-size:13px
-}
-
-/* CHAT */
-
-.chat{
- height:360px;
- margin-top:12px;
- display:flex;
- flex-direction:column
+ padding:14px
 }
 
 .messages{
- flex:1;
- overflow-y:auto;
+ height:250px;
+ overflow:auto;
  display:flex;
  flex-direction:column;
  gap:7px
 }
 
 .message{
- background:#1a1e27;
- padding:8px 10px;
+ background:#1b1f28;
  border-radius:9px;
- font-size:13px;
- word-break:break-word
+ padding:8px
 }
 
 .messageName{
- color:#9299a8;
  font-size:11px;
- font-weight:700;
+ color:#999;
  margin-bottom:3px
 }
 
 .send{
  display:flex;
- gap:6px;
+ gap:7px;
  margin-top:8px
 }
 
 .send input{
- min-width:0
+ flex:1
 }
 
 .send button{
- width:45px;
- border:0;
- border-radius:9px;
- background:#fff;
- color:#000;
- font-weight:900
+ width:50px;
+ margin:0;
+ padding:0
 }
 
-/* MODAL */
-
-.modal{
- position:fixed;
- inset:0;
- background:#000c;
- display:flex;
- align-items:center;
- justify-content:center;
- padding:18px;
- z-index:50
-}
-
-.modalCard{
- width:100%;
- max-width:390px;
- background:#11131a;
- border:1px solid #292d38;
- border-radius:18px;
- padding:20px
-}
-
-.modalCard h2{
- margin:0 0 18px
-}
-
-.close{
- float:right;
- border:0;
- background:none;
- color:#888;
- font-size:27px
-}
-
-@media(max-width:720px){
-
- .layout{
-  grid-template-columns:1fr
- }
-
- .home{
-  margin:40px auto
- }
-
- .chat{
-  height:300px
- }
-
-}
-
-@media(max-width:430px){
-
- #app{
-  padding:10px
- }
-
- .logo{
-  font-size:27px
- }
-
- .roomTitle{
-  font-size:18px
- }
-
+.leave{
+ background:#29171b;
+ color:#ff9da5;
+ width:auto;
+ padding:10px 15px;
+ margin:0
 }
 </style>
 </head>
@@ -371,234 +228,126 @@ input:focus{
 
 <div id="app">
 
-<!-- ================= HOME ================= -->
+ <!-- HOME -->
 
-<section id="home">
+ <div id="home" class="card">
 
- <div class="home">
+  <h1>Томас ❤️ Яна</h1>
 
-  <div class="logo">
-   Томас ❤️ Яна
-  </div>
-
-  <div class="subtitle">
+  <div class="sub">
    Комната для просмотра вместе
   </div>
 
-  <div class="card">
-
-   <label>Твоё имя</label>
-
-   <input
-    id="name"
-    maxlength="20"
-    autocomplete="off"
-    placeholder="Томас"
-   >
-
-   <button
-    id="createBtn"
-    class="btn primary"
-   >
-    ❤️ Создать комнату
-   </button>
-
-   <button
-    id="joinBtn"
-    class="btn secondary"
-   >
-    🔑 Войти по коду
-   </button>
-
-   <div
-    id="homeInfo"
-    class="info"
-   ></div>
-
-  </div>
-
- </div>
-
-</section>
-
-
-<!-- ================= ROOM ================= -->
-
-<section
- id="room"
- class="hidden"
->
-
- <div class="roomHead">
-
-  <div>
-
-   <div class="roomTitle">
-    Томас ❤️ Яна
-   </div>
-
-   <div class="roomCode">
-    Код комнаты:
-    <b id="roomCode"></b>
-   </div>
-
-  </div>
-
-  <button
-   id="leaveBtn"
-   class="leave"
-  >
-   Выйти
-  </button>
-
- </div>
-
-
- <div class="layout">
-
-  <main>
-
-   <div
-    id="video"
-    class="video"
-   >
-    <div>
-     🎬<br><br>
-     Здесь появится видео VK
-    </div>
-   </div>
-
-
-   <div class="videoInput">
-
-    <input
-     id="videoUrl"
-     placeholder="Вставь ссылку или iframe VK"
-    >
-
-    <button id="videoBtn">
-     OK
-    </button>
-
-   </div>
-
-
-   <div class="controls">
-
-    <button id="playBtn">
-     ▶️ Смотреть
-    </button>
-
-    <button id="pauseBtn">
-     ⏸ Пауза
-    </button>
-
-   </div>
-
-
-   <div
-    id="roomInfo"
-    class="info"
-   ></div>
-
-  </main>
-
-
-  <aside>
-
-   <div class="box">
-
-    <div class="boxTitle">
-     👥 В комнате
-    </div>
-
-    <div
-     id="users"
-     class="users"
-    ></div>
-
-   </div>
-
-
-   <div class="box chat">
-
-    <div class="boxTitle">
-     💬 Чат
-    </div>
-
-    <div
-     id="messages"
-     class="messages"
-    ></div>
-
-    <div class="send">
-
-     <input
-      id="message"
-      maxlength="300"
-      placeholder="Написать..."
-     >
-
-     <button id="sendBtn">
-      ➤
-     </button>
-
-    </div>
-
-   </div>
-
-  </aside>
-
- </div>
-
-</section>
-
-</div>
-
-
-<!-- ================= JOIN MODAL ================= -->
-
-<div
- id="joinModal"
- class="modal hidden"
->
-
- <div class="modalCard">
-
-  <button
-   id="closeJoin"
-   class="close"
-  >
-   ×
-  </button>
-
-  <h2>
-   Войти в комнату
-  </h2>
-
-  <label>
-   Код комнаты
-  </label>
+  <label>Имя</label>
 
   <input
-   id="joinCode"
-   maxlength="6"
+   id="name"
+   maxlength="20"
+   placeholder="Томас"
    autocomplete="off"
-   placeholder="ABC123"
-   style="text-transform:uppercase"
   >
 
-  <button
-   id="confirmJoin"
-   class="btn primary"
-  >
-   Войти
+  <button id="create">
+   ❤️ Создать комнату
   </button>
 
+  <button
+   id="test"
+   style="background:#1b1f28;color:white"
+  >
+   🔧 Проверить Supabase
+  </button>
+
+  <div id="status">
+   Готово к проверке.
+  </div>
+
+ </div>
+
+
+ <!-- ROOM -->
+
+ <div id="room" class="room hidden">
+
+  <div class="roomHead">
+
+   <div>
+
+    <div class="roomTitle">
+     Томас ❤️ Яна
+    </div>
+
+    <div class="code">
+     Код комнаты:
+     <b id="code"></b>
+    </div>
+
+   </div>
+
+   <button
+    id="leave"
+    class="leave"
+   >
+    Выйти
+   </button>
+
+  </div>
+
+
   <div
-   id="joinInfo"
-   class="info"
+   id="video"
+   class="video"
+  >
+   🎬<br><br>
+   Вставь видео VK
+  </div>
+
+
+  <div class="videoTools">
+
+   <input
+    id="videoUrl"
+    placeholder="Ссылка или iframe VK"
+   >
+
+   <button id="saveVideo">
+    OK
+   </button>
+
+  </div>
+
+
+  <div
+   id="roomStatus"
+   style="margin-top:10px;color:#888"
   ></div>
+
+
+  <div class="chat">
+
+   <b>💬 Чат</b>
+
+   <div
+    id="messages"
+    class="messages"
+    style="margin-top:10px"
+   ></div>
+
+   <div class="send">
+
+    <input
+     id="message"
+     maxlength="300"
+     placeholder="Написать..."
+    >
+
+    <button id="send">
+     ➤
+    </button>
+
+   </div>
+
+  </div>
 
  </div>
 
@@ -607,9 +356,9 @@ input:focus{
 
 <script>
 
-/* ==================================================
+/* ==========================================
    SUPABASE
-================================================== */
+========================================== */
 
 const SUPABASE_URL =
 "https://qyjvkiusyiylckaujjiv.supabase.co";
@@ -617,81 +366,110 @@ const SUPABASE_URL =
 const SUPABASE_KEY =
 "sb_publishable_dwxrSiVkIY5C8PKu--_UlA_phF5hvRy";
 
-const supabaseClient =
+
+const db =
 window.supabase.createClient(
  SUPABASE_URL,
  SUPABASE_KEY
 );
 
 
-/* ==================================================
+/* ==========================================
    STATE
-================================================== */
+========================================== */
 
 let currentRoom=null;
 let currentName="";
 
-let roomChannel=null;
-let usersChannel=null;
-let messagesChannel=null;
+let channel=null;
 
 
-/* ==================================================
-   ELEMENT
-================================================== */
+/* ==========================================
+   HELPERS
+========================================== */
 
 const $=id=>
  document.getElementById(id);
 
 
-/* ==================================================
-   STATUS
-================================================== */
+function status(text,type=""){
 
-function homeStatus(text,type=""){
+ $("status").textContent=text;
 
- $("homeInfo").textContent=text;
-
- $("homeInfo").className=
-  "info "+type;
+ $("status").className=type;
 
 }
 
 
-function joinStatus(text,type=""){
+function roomStatus(text){
 
- $("joinInfo").textContent=text;
-
- $("joinInfo").className=
-  "info "+type;
+ $("roomStatus").textContent=text;
 
 }
 
 
-function roomStatus(text,type=""){
+/* ==========================================
+   SUPABASE TEST
+========================================== */
 
- $("roomInfo").textContent=text;
+async function testSupabase(){
 
- $("roomInfo").className=
-  "info "+type;
+ status(
+  "⏳ Проверяем подключение к Supabase..."
+ );
+
+
+ try{
+
+  const result=
+   await db
+    .from("rooms")
+    .select("id")
+    .limit(1);
+
+
+  if(result.error){
+
+   throw result.error;
+
+  }
+
+
+  status(
+   "🟢 Supabase подключён! Таблица rooms доступна.",
+   "ok"
+  );
+
+
+ }catch(error){
+
+  console.error(error);
+
+  status(
+   "🔴 Supabase ERROR: "+
+   (error.message || error),
+   "err"
+  );
+
+ }
 
 }
 
 
-/* ==================================================
-   ROOM CODE
-================================================== */
+/* ==========================================
+   CODE
+========================================== */
 
 function generateCode(){
 
  const chars=
  "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
- let code="";
+ let result="";
 
  for(let i=0;i<6;i++){
 
-  code+=chars[
+  result+=chars[
    Math.floor(
     Math.random()*chars.length
    )
@@ -699,62 +477,56 @@ function generateCode(){
 
  }
 
- return code;
+ return result;
 
 }
 
 
-/* ==================================================
-   NAME
-================================================== */
+/* ==========================================
+   CREATE ROOM
+========================================== */
 
-function getName(){
+async function createRoom(){
 
- const value=
+ const name=
   $("name").value.trim();
 
- if(!value){
 
-  homeStatus(
-   "❌ Введи своё имя",
-   "error"
+ if(!name){
+
+  status(
+   "🔴 Сначала введи имя.",
+   "err"
   );
 
   $("name").focus();
 
-  return null;
+  return;
+
  }
 
- return value.substring(0,20);
 
-}
+ currentName=
+  name.substring(0,20);
 
 
-/* ==================================================
-   CREATE ROOM
-================================================== */
+ const button=
+  $("create");
 
-async function createRoom(){
+ button.disabled=true;
 
- const name=getName();
 
- if(!name)return;
-
- currentName=name;
-
- $("createBtn").disabled=true;
-
- homeStatus(
-  "Подключение к Supabase..."
+ status(
+  "⏳ 1/4 Проверяем Supabase..."
  );
 
 
  try{
 
-  /* Проверка подключения */
+  /* 1 */
 
   const check=
-   await supabaseClient
+   await db
     .from("rooms")
     .select("id")
     .limit(1);
@@ -763,29 +535,37 @@ async function createRoom(){
   if(check.error){
 
    throw new Error(
-    "Supabase: "+
+    "rooms недоступна: "+
     check.error.message
    );
 
   }
 
 
-  homeStatus(
-   "Создаём комнату..."
+  status(
+   "🟢 2/4 Таблица rooms работает..."
   );
 
 
-  const code=generateCode();
+  /* 2 */
+
+  const code=
+   generateCode();
+
+
+  status(
+   "⏳ 3/4 Создаём комнату "+code+"..."
+  );
 
 
   const result=
-   await supabaseClient
+   await db
     .from("rooms")
     .insert({
 
      code:code,
 
-     host_name:name,
+     host_name:currentName,
 
      video_url:"",
 
@@ -799,24 +579,30 @@ async function createRoom(){
   if(result.error){
 
    throw new Error(
-    "Создание комнаты: "+
+    "INSERT rooms: "+
     result.error.message
    );
 
   }
 
 
-  currentRoom=result.data;
+  currentRoom=
+   result.data;
+
+
+  status(
+   "🟢 4/4 Комната создана. Добавляем тебя..."
+  );
 
 
   const user=
-   await supabaseClient
+   await db
     .from("room_users")
     .insert({
 
      room_id:currentRoom.id,
 
-     user_name:name
+     user_name:currentName
 
     });
 
@@ -824,11 +610,17 @@ async function createRoom(){
   if(user.error){
 
    throw new Error(
-    "Добавление пользователя: "+
+    "INSERT room_users: "+
     user.error.message
    );
 
   }
+
+
+  status(
+   "🟢 Комната успешно создана!",
+   "ok"
+  );
 
 
   openRoom();
@@ -838,211 +630,67 @@ async function createRoom(){
 
   console.error(error);
 
-  homeStatus(
-   "❌ "+error.message,
-   "error"
+
+  status(
+   "🔴 ОШИБКА: "+
+   (error.message || error),
+   "err"
   );
+
 
  }finally{
 
-  $("createBtn").disabled=false;
+  button.disabled=false;
 
  }
 
 }
 
 
-/* ==================================================
-   JOIN
-================================================== */
-
-$("joinBtn").onclick=()=>{
-
- $("joinModal")
-  .classList.remove("hidden");
-
- $("joinCode").focus();
-
-};
-
-
-$("closeJoin").onclick=()=>{
-
- $("joinModal")
-  .classList.add("hidden");
-
-};
-
-
-async function joinRoom(){
-
- const name=getName();
-
- if(!name)return;
-
- currentName=name;
-
-
- const code=
-  $("joinCode")
-   .value
-   .trim()
-   .toUpperCase();
-
-
- if(code.length!==6){
-
-  joinStatus(
-   "❌ Код должен содержать 6 символов",
-   "error"
-  );
-
-  return;
-
- }
-
-
- joinStatus(
-  "Ищем комнату..."
- );
-
-
- try{
-
-  const result=
-   await supabaseClient
-    .from("rooms")
-    .select("*")
-    .eq("code",code)
-    .maybeSingle();
-
-
-  if(result.error){
-
-   throw new Error(
-    result.error.message
-   );
-
-  }
-
-
-  if(!result.data){
-
-   joinStatus(
-    "❌ Комната не найдена",
-    "error"
-   );
-
-   return;
-
-  }
-
-
-  currentRoom=result.data;
-
-
-  const user=
-   await supabaseClient
-    .from("room_users")
-    .insert({
-
-     room_id:currentRoom.id,
-
-     user_name:name
-
-    });
-
-
-  if(user.error){
-
-   throw new Error(
-    "Добавление пользователя: "+
-    user.error.message
-   );
-
-  }
-
-
-  $("joinModal")
-   .classList.add("hidden");
-
-
-  openRoom();
-
-
- }catch(error){
-
-  console.error(error);
-
-  joinStatus(
-   "❌ "+error.message,
-   "error"
-  );
-
- }
-
-}
-
-
-/* ==================================================
+/* ==========================================
    OPEN ROOM
-================================================== */
+========================================== */
 
 async function openRoom(){
 
  $("home")
   .classList.add("hidden");
 
+
  $("room")
   .classList.remove("hidden");
 
 
- $("roomCode").textContent=
+ $("code").textContent=
   currentRoom.code;
 
 
- $("videoUrl").value=
-  currentRoom.video_url || "";
+ loadMessages();
 
-
- renderVideo(
-  currentRoom.video_url
- );
-
-
- await loadUsers();
-
- await loadMessages();
-
- subscribeRealtime();
+ subscribe();
 
 }
 
 
-/* ==================================================
+/* ==========================================
    VIDEO
-================================================== */
+========================================== */
 
-function renderVideo(value){
+function showVideo(value){
 
  if(!value){
 
-  $("video").innerHTML=`
-   <div>
-    🎬<br><br>
-    Вставь видео VK ниже
-   </div>
-  `;
+  $("video").innerHTML=
+   "🎬<br><br>Вставь видео VK";
 
   return;
 
  }
 
 
- let src=value.trim();
+ let src=
+  value.trim();
 
-
- /* Если вставлен iframe */
 
  if(src.includes("<iframe")){
 
@@ -1057,22 +705,6 @@ function renderVideo(value){
  }
 
 
- if(
-  !src.startsWith("http://") &&
-  !src.startsWith("https://")
- ){
-
-  $("video").innerHTML=`
-   <div>
-    ⚠️ Неверная ссылка или iframe
-   </div>
-  `;
-
-  return;
-
- }
-
-
  const iframe=
   document.createElement("iframe");
 
@@ -1080,7 +712,7 @@ function renderVideo(value){
  iframe.src=src;
 
  iframe.allow=
-  "autoplay; encrypted-media; fullscreen; picture-in-picture";
+  "autoplay; fullscreen; encrypted-media; picture-in-picture";
 
  iframe.allowFullscreen=true;
 
@@ -1093,11 +725,7 @@ function renderVideo(value){
 }
 
 
-/* ==================================================
-   SAVE VIDEO
-================================================== */
-
-$("videoBtn").onclick=
+$("saveVideo").onclick=
  async()=>{
 
   if(!currentRoom)return;
@@ -1112,8 +740,7 @@ $("videoBtn").onclick=
   if(!value){
 
    roomStatus(
-    "❌ Вставь видео VK",
-    "error"
+    "Вставь ссылку VK."
    );
 
    return;
@@ -1122,25 +749,22 @@ $("videoBtn").onclick=
 
 
   const result=
-   await supabaseClient
+   await db
     .from("rooms")
     .update({
-
-     video_url:value,
-
-     is_playing:false
-
+     video_url:value
     })
-    .eq("id",currentRoom.id)
-    .select()
-    .single();
+    .eq(
+     "id",
+     currentRoom.id
+    );
 
 
   if(result.error){
 
    roomStatus(
-    "❌ "+result.error.message,
-    "error"
+    "Ошибка: "+
+    result.error.message
    );
 
    return;
@@ -1148,149 +772,18 @@ $("videoBtn").onclick=
   }
 
 
-  currentRoom=result.data;
-
-  renderVideo(value);
+  showVideo(value);
 
   roomStatus(
-   "🎬 Видео добавлено",
-   "success"
+   "🎬 Видео сохранено для комнаты."
   );
 
-};
+ };
 
 
-/* ==================================================
-   PLAY
-================================================== */
-
-$("playBtn").onclick=
- async()=>{
-
-  if(!currentRoom)return;
-
-
-  const result=
-   await supabaseClient
-    .from("rooms")
-    .update({
-     is_playing:true
-    })
-    .eq("id",currentRoom.id);
-
-
-  if(result.error){
-
-   roomStatus(
-    "❌ "+result.error.message,
-    "error"
-   );
-
-   return;
-
-  }
-
-
-  roomStatus(
-   "▶️ Смотрим вместе",
-   "success"
-  );
-
-};
-
-
-/* ==================================================
-   PAUSE
-================================================== */
-
-$("pauseBtn").onclick=
- async()=>{
-
-  if(!currentRoom)return;
-
-
-  const result=
-   await supabaseClient
-    .from("rooms")
-    .update({
-     is_playing:false
-    })
-    .eq("id",currentRoom.id);
-
-
-  if(result.error){
-
-   roomStatus(
-    "❌ "+result.error.message,
-    "error"
-   );
-
-   return;
-
-  }
-
-
-  roomStatus(
-   "⏸ Пауза",
-   "success"
-  );
-
-};
-
-
-/* ==================================================
-   USERS
-================================================== */
-
-async function loadUsers(){
-
- if(!currentRoom)return;
-
-
- const result=
-  await supabaseClient
-   .from("room_users")
-   .select("*")
-   .eq("room_id",currentRoom.id)
-   .order("created_at");
-
-
- if(result.error){
-
-  console.error(
-   result.error
-  );
-
-  return;
-
- }
-
-
- $("users").innerHTML="";
-
-
- (result.data||[])
-  .forEach(user=>{
-
-   const div=
-    document.createElement("div");
-
-   div.className="user";
-
-   div.textContent=
-    "🟢 "+user.user_name;
-
-   $("users")
-    .appendChild(div);
-
-  });
-
-}
-
-
-/* ==================================================
-   MESSAGES
-================================================== */
+/* ==========================================
+   CHAT
+========================================== */
 
 async function loadMessages(){
 
@@ -1298,19 +791,22 @@ async function loadMessages(){
 
 
  const result=
-  await supabaseClient
+  await db
    .from("messages")
    .select("*")
-   .eq("room_id",currentRoom.id)
-   .order("created_at")
-   .limit(100);
+   .eq(
+    "room_id",
+    currentRoom.id
+   )
+   .order(
+    "created_at",
+    {ascending:true}
+   );
 
 
  if(result.error){
 
-  console.error(
-   result.error
-  );
+  console.error(result.error);
 
   return;
 
@@ -1324,7 +820,7 @@ async function loadMessages(){
   .forEach(renderMessage);
 
 
- scrollMessages();
+ scrollChat();
 
 }
 
@@ -1334,7 +830,8 @@ function renderMessage(item){
  const div=
   document.createElement("div");
 
- div.className="message";
+ div.className=
+  "message";
 
 
  const name=
@@ -1362,19 +859,13 @@ function renderMessage(item){
  $("messages")
   .appendChild(div);
 
-
- scrollMessages();
-
 }
 
 
-function scrollMessages(){
+function scrollChat(){
 
- const box=
-  $("messages");
-
- box.scrollTop=
-  box.scrollHeight;
+ $("messages").scrollTop=
+  $("messages").scrollHeight;
 
 }
 
@@ -1387,6 +878,7 @@ async function sendMessage(){
  const input=
   $("message");
 
+
  const text=
   input.value.trim();
 
@@ -1398,7 +890,7 @@ async function sendMessage(){
 
 
  const result=
-  await supabaseClient
+  await db
    .from("messages")
    .insert({
 
@@ -1414,8 +906,8 @@ async function sendMessage(){
  if(result.error){
 
   roomStatus(
-   "❌ "+result.error.message,
-   "error"
+   "Ошибка чата: "+
+   result.error.message
   );
 
  }
@@ -1423,7 +915,7 @@ async function sendMessage(){
 }
 
 
-$("sendBtn").onclick=
+$("send").onclick=
  sendMessage;
 
 
@@ -1438,22 +930,21 @@ $("message").addEventListener(
 );
 
 
-/* ==================================================
+/* ==========================================
    REALTIME
-================================================== */
+========================================== */
 
-function subscribeRealtime(){
+function subscribe(){
 
  if(!currentRoom)return;
 
 
- /* ROOM */
-
- roomChannel=
-  supabaseClient
+ channel=
+  db
    .channel(
     "room-"+currentRoom.id
    )
+
    .on(
     "postgres_changes",
     {
@@ -1465,76 +956,26 @@ function subscribeRealtime(){
     },
     payload=>{
 
-     const old=
-      currentRoom;
-
      currentRoom=
       payload.new;
 
 
      if(
-      old.video_url !==
-      currentRoom.video_url
+      payload.new.video_url
      ){
 
       $("videoUrl").value=
-       currentRoom.video_url || "";
+       payload.new.video_url;
 
-      renderVideo(
-       currentRoom.video_url
-      );
-
-     }
-
-
-     if(
-      old.is_playing !==
-      currentRoom.is_playing
-     ){
-
-      roomStatus(
-       currentRoom.is_playing
-        ? "▶️ Яна/Томас включил просмотр"
-        : "⏸ Поставили на паузу"
+      showVideo(
+       payload.new.video_url
       );
 
      }
 
     }
    )
-   .subscribe();
 
-
- /* USERS */
-
- usersChannel=
-  supabaseClient
-   .channel(
-    "users-"+currentRoom.id
-   )
-   .on(
-    "postgres_changes",
-    {
-     event:"*",
-     schema:"public",
-     table:"room_users",
-     filter:
-      "room_id=eq."+currentRoom.id
-    },
-    ()=>{
-     loadUsers();
-    }
-   )
-   .subscribe();
-
-
- /* CHAT */
-
- messagesChannel=
-  supabaseClient
-   .channel(
-    "messages-"+currentRoom.id
-   )
    .on(
     "postgres_changes",
     {
@@ -1545,58 +986,51 @@ function subscribeRealtime(){
       "room_id=eq."+currentRoom.id
     },
     payload=>{
+
      renderMessage(
       payload.new
      );
+
+     scrollChat();
+
     }
    )
+
    .subscribe();
 
 }
 
 
-/* ==================================================
+/* ==========================================
    LEAVE
-================================================== */
+========================================== */
 
-$("leaveBtn").onclick=
+$("leave").onclick=
  async()=>{
 
-  if(!currentRoom)return;
+  if(currentRoom){
 
-
-  await supabaseClient
-   .from("room_users")
-   .delete()
-   .eq(
-    "room_id",
-    currentRoom.id
-   )
-   .eq(
-    "user_name",
-    currentName
-   );
-
-
-  if(roomChannel)
-   await supabaseClient
-    .removeChannel(
-     roomChannel
+   await db
+    .from("room_users")
+    .delete()
+    .eq(
+     "room_id",
+     currentRoom.id
+    )
+    .eq(
+     "user_name",
+     currentName
     );
 
-
-  if(usersChannel)
-   await supabaseClient
-    .removeChannel(
-     usersChannel
-    );
+  }
 
 
-  if(messagesChannel)
-   await supabaseClient
-    .removeChannel(
-     messagesChannel
-    );
+  if(channel){
+
+   await db
+    .removeChannel(channel);
+
+  }
 
 
   currentRoom=null;
@@ -1609,17 +1043,23 @@ $("leaveBtn").onclick=
    .classList.remove("hidden");
 
 
-  homeStatus(
-   "Ты вышел из комнаты",
-   "success"
+  status(
+   "Ты вышел из комнаты."
   );
 
-};
+ };
 
 
-/* ==================================================
-   ENTER
-================================================== */
+/* ==========================================
+   EVENTS
+========================================== */
+
+$("test").onclick=
+ testSupabase;
+
+$("create").onclick=
+ createRoom;
+
 
 $("name").addEventListener(
  "keydown",
@@ -1630,28 +1070,6 @@ $("name").addEventListener(
 
  }
 );
-
-
-$("joinCode").addEventListener(
- "keydown",
- e=>{
-
-  if(e.key==="Enter")
-   $("confirmJoin").click();
-
- }
-);
-
-
-/* ==================================================
-   BUTTONS
-================================================== */
-
-$("createBtn").onclick=
- createRoom;
-
-$("confirmJoin").onclick=
- joinRoom;
 
 </script>
 
